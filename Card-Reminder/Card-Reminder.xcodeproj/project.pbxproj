@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E2FF43D277881BA00E3DA30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E2FF43C277881BA00E3DA30 /* GoogleService-Info.plist */; };
+		1E2FF4402778825E00E3DA30 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1E2FF43F2778825E00E3DA30 /* FirebaseAuth */; };
+		1E2FF4422778825E00E3DA30 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1E2FF4412778825E00E3DA30 /* FirebaseFirestore */; };
+		1E2FF4442778825E00E3DA30 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1E2FF4432778825E00E3DA30 /* FirebaseStorage */; };
+		1E2FF4492779935D00E3DA30 /* LadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FF4482779935D00E3DA30 /* LadingViewController.swift */; };
+		1E2FF44B277993BB00E3DA30 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FF44A277993BB00E3DA30 /* SignUpViewController.swift */; };
+		1E2FF44D277993DB00E3DA30 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FF44C277993DA00E3DA30 /* SignInViewController.swift */; };
+		1E2FF44F277993F800E3DA30 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FF44E277993F800E3DA30 /* HomeViewController.swift */; };
+		1E2FF4512779943900E3DA30 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FF4502779943900E3DA30 /* User.swift */; };
+		1E2FF4532779944900E3DA30 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FF4522779944900E3DA30 /* Card.swift */; };
+		1E2FF455277994F300E3DA30 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FF454277994F300E3DA30 /* CardViewController.swift */; };
+		1E2FF4582779996600E3DA30 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FF4572779996600E3DA30 /* ImageView.swift */; };
+		1E2FF45B277999A200E3DA30 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FF45A277999A200E3DA30 /* Activity.swift */; };
 		1E52990F2774AF520078CA41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52990E2774AF520078CA41 /* AppDelegate.swift */; };
 		1E5299112774AF520078CA41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5299102774AF520078CA41 /* SceneDelegate.swift */; };
 		1E5299132774AF520078CA41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5299122774AF520078CA41 /* ViewController.swift */; };
@@ -16,6 +29,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E2FF43C277881BA00E3DA30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1E2FF4482779935D00E3DA30 /* LadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadingViewController.swift; sourceTree = "<group>"; };
+		1E2FF44A277993BB00E3DA30 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1E2FF44C277993DA00E3DA30 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		1E2FF44E277993F800E3DA30 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1E2FF4502779943900E3DA30 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1E2FF4522779944900E3DA30 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		1E2FF454277994F300E3DA30 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		1E2FF4572779996600E3DA30 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		1E2FF45A277999A200E3DA30 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		1E52990B2774AF520078CA41 /* Card-Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card-Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E52990E2774AF520078CA41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E5299102774AF520078CA41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,15 +54,62 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E2FF4402778825E00E3DA30 /* FirebaseAuth in Frameworks */,
+				1E2FF4422778825E00E3DA30 /* FirebaseFirestore in Frameworks */,
+				1E2FF4442778825E00E3DA30 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E2FF4452779611C00E3DA30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1E2FF4502779943900E3DA30 /* User.swift */,
+				1E2FF4522779944900E3DA30 /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E2FF4462779613200E3DA30 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E5299142774AF520078CA41 /* Main.storyboard */,
+				1E5299192774AF560078CA41 /* LaunchScreen.storyboard */,
+				1E5299172774AF560078CA41 /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E2FF4472779613F00E3DA30 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1E2FF4482779935D00E3DA30 /* LadingViewController.swift */,
+				1E2FF44A277993BB00E3DA30 /* SignUpViewController.swift */,
+				1E2FF44C277993DA00E3DA30 /* SignInViewController.swift */,
+				1E2FF44E277993F800E3DA30 /* HomeViewController.swift */,
+				1E2FF454277994F300E3DA30 /* CardViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1E2FF4562779993000E3DA30 /* Utill */ = {
+			isa = PBXGroup;
+			children = (
+				1E2FF4572779996600E3DA30 /* ImageView.swift */,
+				1E2FF45A277999A200E3DA30 /* Activity.swift */,
+			);
+			path = Utill;
+			sourceTree = "<group>";
+		};
 		1E5299022774AF520078CA41 = {
 			isa = PBXGroup;
 			children = (
+				1E2FF4562779993000E3DA30 /* Utill */,
+				1E2FF4452779611C00E3DA30 /* Model */,
+				1E2FF4462779613200E3DA30 /* View */,
+				1E2FF4472779613F00E3DA30 /* Controller */,
 				1E52990D2774AF520078CA41 /* Card-Reminder */,
 				1E52990C2774AF520078CA41 /* Products */,
 			);
@@ -59,10 +129,8 @@
 				1E52990E2774AF520078CA41 /* AppDelegate.swift */,
 				1E5299102774AF520078CA41 /* SceneDelegate.swift */,
 				1E5299122774AF520078CA41 /* ViewController.swift */,
-				1E5299142774AF520078CA41 /* Main.storyboard */,
-				1E5299172774AF560078CA41 /* Assets.xcassets */,
-				1E5299192774AF560078CA41 /* LaunchScreen.storyboard */,
 				1E52991C2774AF560078CA41 /* Info.plist */,
+				1E2FF43C277881BA00E3DA30 /* GoogleService-Info.plist */,
 			);
 			path = "Card-Reminder";
 			sourceTree = "<group>";
@@ -83,6 +151,11 @@
 			dependencies = (
 			);
 			name = "Card-Reminder";
+			packageProductDependencies = (
+				1E2FF43F2778825E00E3DA30 /* FirebaseAuth */,
+				1E2FF4412778825E00E3DA30 /* FirebaseFirestore */,
+				1E2FF4432778825E00E3DA30 /* FirebaseStorage */,
+			);
 			productName = "Card-Reminder";
 			productReference = 1E52990B2774AF520078CA41 /* Card-Reminder.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +184,9 @@
 				Base,
 			);
 			mainGroup = 1E5299022774AF520078CA41;
+			packageReferences = (
+				1E2FF43E2778825E00E3DA30 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 1E52990C2774AF520078CA41 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,6 +204,7 @@
 				1E52991B2774AF560078CA41 /* LaunchScreen.storyboard in Resources */,
 				1E5299182774AF560078CA41 /* Assets.xcassets in Resources */,
 				1E5299162774AF520078CA41 /* Main.storyboard in Resources */,
+				1E2FF43D277881BA00E3DA30 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +216,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E5299132774AF520078CA41 /* ViewController.swift in Sources */,
+				1E2FF4532779944900E3DA30 /* Card.swift in Sources */,
 				1E52990F2774AF520078CA41 /* AppDelegate.swift in Sources */,
+				1E2FF44D277993DB00E3DA30 /* SignInViewController.swift in Sources */,
+				1E2FF4582779996600E3DA30 /* ImageView.swift in Sources */,
 				1E5299112774AF520078CA41 /* SceneDelegate.swift in Sources */,
+				1E2FF45B277999A200E3DA30 /* Activity.swift in Sources */,
+				1E2FF4512779943900E3DA30 /* User.swift in Sources */,
+				1E2FF4492779935D00E3DA30 /* LadingViewController.swift in Sources */,
+				1E2FF44F277993F800E3DA30 /* HomeViewController.swift in Sources */,
+				1E2FF455277994F300E3DA30 /* CardViewController.swift in Sources */,
+				1E2FF44B277993BB00E3DA30 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +446,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1E2FF43E2778825E00E3DA30 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Amaljeli/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1E2FF43F2778825E00E3DA30 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E2FF43E2778825E00E3DA30 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		1E2FF4412778825E00E3DA30 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E2FF43E2778825E00E3DA30 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		1E2FF4432778825E00E3DA30 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E2FF43E2778825E00E3DA30 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1E5299032774AF520078CA41 /* Project object */;
 }
