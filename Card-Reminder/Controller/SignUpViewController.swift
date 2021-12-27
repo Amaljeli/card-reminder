@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-class SignUpViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class SignUpViewController: UIViewController {
 let imagePickerController = UIImagePickerController ()
     var activityIndicator = UIActivityIndicatorView ()
     
@@ -98,14 +98,42 @@ let imagePickerController = UIImagePickerController ()
         }
     }
 }
-extension SignUpViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+extension SignUpViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
    
     @objc func selectImage() {
         showAlart()
     }
     func showAlart() {
         let alert = UIAlertController(title: "choose profile picture", message: "where do you want to pick your image from?", preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) { Action in
+            self.getImage(from: .camera)
+        }
+        let galaryAction = UIAlertAction(title: "photo Album", style: .default) { Action in
+            self.getImage(from: .photoLibrary)
+        }
+        let dismissAction = UIAlertAction(title: "Cancle", style: .destructive) { Action in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(cameraAction)
+        alert.addAction(galaryAction)
+        alert.addAction(dismissAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    func getImage( from sourceType: UIImagePickerController.SourceType) {
         
+        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+            imagePickerController.sourceType = sourceType
+            self.present(imagePickerController, animated: true, completion: nil)
+        }
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return}
+        userImageView.image = chosenImage
+        dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }
+
         

@@ -26,6 +26,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <segue destination="5zc-ak-gcD" kind="show" id="vyn-ev-eZc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNE-Zn-5VN">
                                 <rect key="frame" x="132" y="571" width="112" height="31"/>
@@ -33,6 +36,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Sign in"/>
+                                <connections>
+                                    <segue destination="5zc-ak-gcD" kind="show" id="3XL-Ms-7iD"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ceard Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEV-mf-Kc5">
                                 <rect key="frame" x="113" y="347" width="188" height="33"/>
@@ -367,6 +373,9 @@
             <point key="canvasLocation" x="1613.0434782608697" y="-33.482142857142854"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3XL-Ms-7iD"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Card Remainder" width="1080" height="1920"/>
         <image name="bell.badge" catalog="system" width="128" height="124"/>
