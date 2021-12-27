@@ -26,6 +26,8 @@
 		1E5299162774AF520078CA41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5299142774AF520078CA41 /* Main.storyboard */; };
 		1E5299182774AF560078CA41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E5299172774AF560078CA41 /* Assets.xcassets */; };
 		1E52991B2774AF560078CA41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5299192774AF560078CA41 /* LaunchScreen.storyboard */; };
+		1EEFD0BB2779D8A600C7BD35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1EEFD0BA2779D8A600C7BD35 /* .gitignore */; };
+		1EEFD0BD2779D8B200C7BD35 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1EEFD0BC2779D8B200C7BD35 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		1E5299172774AF560078CA41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E52991A2774AF560078CA41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E52991C2774AF560078CA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EEFD0BA2779D8A600C7BD35 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		1EEFD0BC2779D8B200C7BD35 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 		1E5299022774AF520078CA41 = {
 			isa = PBXGroup;
 			children = (
+				1EEFD0BA2779D8A600C7BD35 /* .gitignore */,
+				1EEFD0BC2779D8B200C7BD35 /* README.md */,
 				1E2FF4562779993000E3DA30 /* Utill */,
 				1E2FF4452779611C00E3DA30 /* Model */,
 				1E2FF4462779613200E3DA30 /* View */,
@@ -201,6 +207,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EEFD0BD2779D8B200C7BD35 /* README.md in Resources */,
+				1EEFD0BB2779D8A600C7BD35 /* .gitignore in Resources */,
 				1E52991B2774AF560078CA41 /* LaunchScreen.storyboard in Resources */,
 				1E5299182774AF560078CA41 /* Assets.xcassets in Resources */,
 				1E5299162774AF520078CA41 /* Main.storyboard in Resources */,
