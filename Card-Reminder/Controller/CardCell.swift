@@ -15,6 +15,7 @@ class CardCell: UITableViewCell {
     @IBOutlet weak var taypeLabel: UILabel!
     @IBOutlet weak var remainingPeriodLabel: UILabel!
     @IBOutlet weak var remainingPeriodLabelImage: UIImageView!
+    @IBOutlet weak var TaypeLabelCell: UILabel!
     
     
     override func awakeFromNib() {
@@ -35,6 +36,7 @@ class CardCell: UITableViewCell {
         nuStartDateLabel.text = card.startDate
         nuEndDateLabel.text = card.ExpiryDate
         taypeLabel.text = card.type
+       // TaypeLabelCell = card.
         return self
         
     }

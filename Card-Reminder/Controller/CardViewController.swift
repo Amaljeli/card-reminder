@@ -18,30 +18,53 @@ class CardViewController: UIViewController {
             cardImageView.addGestureRecognizer(tapGesture)
         }
     }
+//    var type = ""
+    @IBOutlet weak var startDate: UIDatePicker!
+    @IBOutlet weak var endDate: UIDatePicker!
     
-//    @IBOutlet weak var startDate: UIDatePicker!
-//    @IBOutlet weak var endDate: UIDatePicker!
+    @IBOutlet weak var startDateLabel: UILabel!
     
-    @IBOutlet weak var startDateTextField: UITextField!
-    let datePicker = UIDatePicker ()
+    @IBOutlet weak var endDateLabel: UILabel!
+    @IBOutlet weak var startPiecker: UIDatePicker!
     
-    @IBOutlet weak var endDateTextField: UITextField!
+    
     @IBOutlet weak var TypePickerView: UIPickerView!
     let activityIndicator = UIActivityIndicatorView()
-    var arrayOfTaype = ["Card Bank","Passpot","Driving license","Id Card","Other Card"]
+    var arrayOfTaype = ["Card Bank","Passpot","Driving license","Id Card","Iqama","Other Card"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        func crateDatePicker () {
-            
-        }
+        
+        
+//        print(type,"?????")
+//        __________________________________________________
+//        crateDatePicker()
+//        func crateDatePicker () {
+//            let toolbar = UIToolbar()
+//            toolbar.sizeToFit()
+//
+////            let doneBtn = UIBarButtonItem(barButtonSystemItem: .done , target: nil, action: #selector(donePressed))
+//            let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+//            toolbar.setItems([doneBtn], animated: true)
+//            startDateTextField.inputAccessoryView = toolbar
+//
+//            startDateTextField.inputView = datePicker
+//
+//        }
+//
+//        @objc func donePressed () {
+//
+//                }
+
+//        _____________________________________
     
         TypePickerView.delegate = self
         TypePickerView.dataSource = self
         
         if let selectedCard = selectedCard,
         let selectedImage = selectedCradImage {
-            endDateTextField.text = selectedCard.startDate
-            endDateTextField.text = selectedCard.ExpiryDate
+//            startPiecker.date =  startPiecker
+            startDateLabel.text = selectedCard.startDate
+            endDateLabel.text = selectedCard.ExpiryDate
             cardImageView.image = selectedImage
             actionButton.setTitle("Update Card", for: .normal)
             let deleteBarButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(handleDelete))
@@ -53,7 +76,26 @@ class CardViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
-   
+    @IBAction func satatDatePiecker(_ sender: UIDatePicker) {
+        
+        let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+        startDateLabel.text = "\(dateFormatter.string(from: sender.date) )"
+        
+    }
+    
+    @IBAction func endDatePiecker(_ sender: UIDatePicker) {
+        
+        let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+       
+        
+        endDateLabel.text = "\(dateFormatter.string(from: sender.date) )"
+
+    }
+    
+    
+    
     @objc func handleDelete (_ sender: UIBarButtonItem) {
         let ref = Firestore.firestore().collection("posts")
         if let selectedCard = selectedCard {
@@ -81,8 +123,9 @@ class CardViewController: UIViewController {
     @IBAction func handleActionTouch(_ sender: Any) {
         if let image = cardImageView.image,
            let imageData = image.jpegData(compressionQuality: 0.75),
-           let startDate = startDateTextField.text,
-           let endDate = endDateTextField.text,
+           let startDate = startDateLabel.text,
+           let endDate = endDateLabel.text,
+//           let type = TypePickerView,
            let currentUser = Auth.auth().currentUser {
             Activity.showIndicator(parentView: self.view, childView: activityIndicator)
             var postId = ""
@@ -108,6 +151,7 @@ class CardViewController: UIViewController {
                                 "userId":selectedCard.user.id,
                                 "startDate":startDate,
                                 "endDate":endDate,
+//                                "taype":type,
                                 "imageUrl":url.absoluteString,
                                 "createdAt":selectedCard.createdAt ?? FieldValue.serverTimestamp(),
                                 "updatedAt": FieldValue.serverTimestamp()
@@ -117,6 +161,7 @@ class CardViewController: UIViewController {
                                 "userId":currentUser.uid,
                                 "startDate":startDate,
                                 "endDate":endDate,
+//                                "taype":type,
                                 "imageUrl":url.absoluteString,
                                 "createdAt":FieldValue.serverTimestamp(),
                                 "updatedAt": FieldValue.serverTimestamp()
@@ -146,11 +191,9 @@ extension CardViewController:UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func numberOfComponents (in pickerView: UIPickerView) -> Int {
-
             return 1
          
-       
-        }
+               }
         
    
 //
@@ -160,7 +203,10 @@ extension CardViewController:UIPickerViewDelegate, UIPickerViewDataSource {
 //        ابغى هنا اربط من ليبل اللي ف صفحه الديتيلز
 //        pickerLabel.text = ("\(Taype)")
     }
-    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//      type = arrayOfTaype[row]
+        return arrayOfTaype[row]
+    }
     }
     
 
