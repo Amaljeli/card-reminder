@@ -6,24 +6,199 @@
 //
 
 import UIKit
-
+import Firebase
 class CardViewController: UIViewController {
-
+    var selectedCard:Card?
+    var selectedCradImage:UIImage?
+    @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var cardImageView: UIImageView!{
+        didSet {
+            cardImageView.isUserInteractionEnabled = true
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
+            cardImageView.addGestureRecognizer(tapGesture)
+        }
+    }
+    
+//    @IBOutlet weak var startDate: UIDatePicker!
+//    @IBOutlet weak var endDate: UIDatePicker!
+    
+    @IBOutlet weak var startDateTextField: UITextField!
+    let datePicker = UIDatePicker ()
+    
+    @IBOutlet weak var endDateTextField: UITextField!
+    @IBOutlet weak var TypePickerView: UIPickerView!
+    let activityIndicator = UIActivityIndicatorView()
+    var arrayOfTaype = ["Card Bank","Passpot","Driving license","Id Card","Other Card"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        func crateDatePicker () {
+            
+        }
+    
+        TypePickerView.delegate = self
+        TypePickerView.dataSource = self
+        
+        if let selectedCard = selectedCard,
+        let selectedImage = selectedCradImage {
+            endDateTextField.text = selectedCard.startDate
+            endDateTextField.text = selectedCard.ExpiryDate
+            cardImageView.image = selectedImage
+            actionButton.setTitle("Update Card", for: .normal)
+            let deleteBarButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(handleDelete))
+            self.navigationItem.rightBarButtonItem = deleteBarButton
+        }else {
+            actionButton.setTitle("Add Card", for: .normal)
+            self.navigationItem.rightBarButtonItem = nil
+            
+        }
         // Do any additional setup after loading the view.
+    }
+   
+    @objc func handleDelete (_ sender: UIBarButtonItem) {
+        let ref = Firestore.firestore().collection("posts")
+        if let selectedCard = selectedCard {
+            Activity.showIndicator(parentView: self.view, childView: activityIndicator)
+            ref.document(selectedCard.id).delete { error in
+                if let error = error {
+                    print("Error in db delete",error)
+                }else {
+                    let storageRef = Storage.storage().reference(withPath: "posts/\(selectedCard.user.id)/\(selectedCard.id)")
+                    
+                    storageRef.delete { error in
+                        if let error = error {
+                            print("Error in storage delete",error)
+                        } else {
+                            self.activityIndicator.stopAnimating()
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+}
+    @IBAction func handleActionTouch(_ sender: Any) {
+        if let image = cardImageView.image,
+           let imageData = image.jpegData(compressionQuality: 0.75),
+           let startDate = startDateTextField.text,
+           let endDate = endDateTextField.text,
+           let currentUser = Auth.auth().currentUser {
+            Activity.showIndicator(parentView: self.view, childView: activityIndicator)
+            var postId = ""
+            if let selectedCard = selectedCard {
+                postId = selectedCard.id
+            }else {
+                postId = "\(Firebase.UUID())"
+            }
+            let storageRef = Storage.storage().reference(withPath: "posts/\(currentUser.uid)/\(postId)")
+            let updloadMeta = StorageMetadata.init()
+            updloadMeta.contentType = "image/jpeg"
+            storageRef.putData(imageData, metadata: updloadMeta) { storageMeta, error in
+                if let error = error {
+                    print("Upload error",error.localizedDescription)
+                }
+                storageRef.downloadURL { url, error in
+                    var cardData = [String:Any]()
+                    if let url = url {
+                        let db = Firestore.firestore()
+                        let ref = db.collection("card")
+                        if let selectedCard = self.selectedCard {
+                            cardData = [
+                                "userId":selectedCard.user.id,
+                                "startDate":startDate,
+                                "endDate":endDate,
+                                "imageUrl":url.absoluteString,
+                                "createdAt":selectedCard.createdAt ?? FieldValue.serverTimestamp(),
+                                "updatedAt": FieldValue.serverTimestamp()
+                            ]
+                        }else {
+                            cardData = [
+                                "userId":currentUser.uid,
+                                "startDate":startDate,
+                                "endDate":endDate,
+                                "imageUrl":url.absoluteString,
+                                "createdAt":FieldValue.serverTimestamp(),
+                                "updatedAt": FieldValue.serverTimestamp()
+                            ]
+                        }
+                        ref.document(postId).setData(cardData) { error in
+                            if let error = error {
+                                print("FireStore Error",error.localizedDescription)
+                            }
+                            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+        
+    }
+
+
+extension CardViewController:UIPickerViewDelegate, UIPickerViewDataSource {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arrayOfTaype.count
+
+    }
+    
+    func numberOfComponents (in pickerView: UIPickerView) -> Int {
+
+            return 1
+         
+       
+        }
+        
+   
+//
+    func CardpickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let Taype = arrayOfTaype[pickerView.selectedRow(inComponent: 0)]
+        
+//        ابغى هنا اربط من ليبل اللي ف صفحه الديتيلز
+//        pickerLabel.text = ("\(Taype)")
+    }
+    
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension CardViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @objc func chooseImage() {
+        self.showAlert()
     }
-    */
-
+    private func showAlert() {
+        
+        let alert = UIAlertController(title: "Choose Profile Picture", message: "From where you want to pick this image?", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
+            self.getImage(fromSourceType: .camera)
+        }))
+        alert.addAction(UIAlertAction(title: "Photo Album", style: .default, handler: {(action: UIAlertAction) in
+            self.getImage(fromSourceType: .photoLibrary)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    //get image from source type
+    private func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
+        
+        //Check is source type available
+        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+            
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = sourceType
+            self.present(imagePickerController, animated: true, completion: nil)
+        }
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        cardImageView.image = chosenImage
+        dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
 }

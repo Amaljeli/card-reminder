@@ -6,24 +6,34 @@
 //
 
 import UIKit
-
+import Firebase
 class SignInViewController: UIViewController {
-
+    var activityIndicator = UIActivityIndicatorView ()
+    @IBOutlet weak var EmailTaxtField: UITextField!
+    @IBOutlet weak var PasswordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func handleSignIn(_ sender: Any) {
+        if let email = EmailTaxtField.text,
+           let password = PasswordTextField.text {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            Activity.showIndicator(parentView: self.view, childView:  activityIndicator)
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                if let _ = authResult {
+                    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
+                        vc.modalPresentationStyle = .fullScreen
+                        Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                }
+            }
+        }
     }
-    */
 
+    
 }
+

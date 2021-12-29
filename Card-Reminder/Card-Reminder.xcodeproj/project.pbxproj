@@ -28,6 +28,9 @@
 		1E52991B2774AF560078CA41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5299192774AF560078CA41 /* LaunchScreen.storyboard */; };
 		1EEFD0BB2779D8A600C7BD35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1EEFD0BA2779D8A600C7BD35 /* .gitignore */; };
 		1EEFD0BD2779D8B200C7BD35 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1EEFD0BC2779D8B200C7BD35 /* README.md */; };
+		1EEFD0BF277B026900C7BD35 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEFD0BE277B026900C7BD35 /* DetailsViewController.swift */; };
+		1EEFD0C6277B270900C7BD35 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEFD0C4277B270900C7BD35 /* CardCell.swift */; };
+		1EEFD0C7277B270900C7BD35 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EEFD0C5277B270900C7BD35 /* CardCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		1E52991C2774AF560078CA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EEFD0BA2779D8A600C7BD35 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		1EEFD0BC2779D8B200C7BD35 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1EEFD0BE277B026900C7BD35 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		1EEFD0C4277B270900C7BD35 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardCell.swift; path = Controller/CardCell.swift; sourceTree = SOURCE_ROOT; };
+		1EEFD0C5277B270900C7BD35 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CardCell.xib; path = Controller/CardCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,8 @@
 		1E2FF4462779613200E3DA30 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1EEFD0C4277B270900C7BD35 /* CardCell.swift */,
+				1EEFD0C5277B270900C7BD35 /* CardCell.xib */,
 				1E5299142774AF520078CA41 /* Main.storyboard */,
 				1E5299192774AF560078CA41 /* LaunchScreen.storyboard */,
 				1E5299172774AF560078CA41 /* Assets.xcassets */,
@@ -94,6 +102,7 @@
 				1E2FF44C277993DA00E3DA30 /* SignInViewController.swift */,
 				1E2FF44E277993F800E3DA30 /* HomeViewController.swift */,
 				1E2FF454277994F300E3DA30 /* CardViewController.swift */,
+				1EEFD0BE277B026900C7BD35 /* DetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,6 +219,7 @@
 				1EEFD0BD2779D8B200C7BD35 /* README.md in Resources */,
 				1EEFD0BB2779D8A600C7BD35 /* .gitignore in Resources */,
 				1E52991B2774AF560078CA41 /* LaunchScreen.storyboard in Resources */,
+				1EEFD0C7277B270900C7BD35 /* CardCell.xib in Resources */,
 				1E5299182774AF560078CA41 /* Assets.xcassets in Resources */,
 				1E5299162774AF520078CA41 /* Main.storyboard in Resources */,
 				1E2FF43D277881BA00E3DA30 /* GoogleService-Info.plist in Resources */,
@@ -230,10 +240,12 @@
 				1E2FF4582779996600E3DA30 /* ImageView.swift in Sources */,
 				1E5299112774AF520078CA41 /* SceneDelegate.swift in Sources */,
 				1E2FF45B277999A200E3DA30 /* Activity.swift in Sources */,
+				1EEFD0C6277B270900C7BD35 /* CardCell.swift in Sources */,
 				1E2FF4512779943900E3DA30 /* User.swift in Sources */,
 				1E2FF4492779935D00E3DA30 /* LadingViewController.swift in Sources */,
 				1E2FF44F277993F800E3DA30 /* HomeViewController.swift in Sources */,
 				1E2FF455277994F300E3DA30 /* CardViewController.swift in Sources */,
+				1EEFD0BF277B026900C7BD35 /* DetailsViewController.swift in Sources */,
 				1E2FF44B277993BB00E3DA30 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
