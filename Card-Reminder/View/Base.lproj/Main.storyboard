@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zID-qi-KZX">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Card Remainder" translatesAutoresizingMaskIntoConstraints="NO" id="jXZ-oC-h6t">
-                                <rect key="frame" x="-8" y="0.0" width="400" height="854"/>
+                                <rect key="frame" x="-8" y="0.0" width="383" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R23-e3-i05">
@@ -42,7 +41,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ceard Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEV-mf-Kc5">
-                                <rect key="frame" x="79" y="344" width="188" height="33"/>
+                                <rect key="frame" x="76" y="273" width="188" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
@@ -74,14 +73,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Zu-rp-FKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="217" y="-499"/>
+            <point key="canvasLocation" x="-552" y="-33"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="pPg-tX-hVk">
             <objects>
                 <viewController id="UEK-sK-hZG" customClass="SignUpViewController" customModule="Card_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e5H-ew-Hks">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's Get Started! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cla-jD-bx6">
@@ -117,7 +116,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="message-icon-design-template-ff734aad72da096f0e49f3d693042135_screen" translatesAutoresizingMaskIntoConstraints="NO" id="GbV-SB-GZt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GbV-SB-GZt">
                                 <rect key="frame" x="79" y="292" width="31" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -211,14 +210,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hl-Sn-xyN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="31J-bk-qYi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1198" y="-498"/>
+            <point key="canvasLocation" x="3901.5999999999999" y="-64.31784107946028"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="1qR-2h-YLy">
             <objects>
                 <viewController id="cwG-6h-nWF" customClass="HomeViewController" customModule="Card_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DAa-Xb-qNl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome! Amal jeli " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b94-CG-Jnn">
@@ -233,11 +232,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="335" id="N2n-fE-hiE" customClass="CardCell" customModule="Card_Reminder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="375" height="335"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="140" id="N2n-fE-hiE" customClass="CardCell" customModule="Card_Reminder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N2n-fE-hiE" id="XY6-cI-7dY">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="335"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ex ATM ID after 1 month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQk-Dr-V3H">
@@ -248,14 +247,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubq-Gb-5Bm">
-                                                    <rect key="frame" x="72" y="54" width="219" height="51"/>
+                                                    <rect key="frame" x="78" y="68" width="213" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="creditcard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wFR-2k-yEv">
-                                                    <rect key="frame" x="0.0" y="42.5" width="34" height="42"/>
+                                                    <rect key="frame" x="11" y="12.5" width="53" height="42"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -275,7 +274,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Add new card"/>
                                 <connections>
-                                    <segue destination="jbR-Lj-xrK" kind="show" identifier="toCardVC" id="cPO-4m-Vji"/>
+                                    <segue destination="jbR-Lj-xrK" kind="show" id="cPO-4m-Vji"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="creditcard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oiN-kB-T0o">
@@ -301,19 +300,19 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cardTableView" destination="eVn-C7-5bV" id="zlO-nI-uGu"/>
-                        <segue destination="yua-UJ-mbf" kind="show" identifier="toDetailsVC" id="QN6-r3-Vwd"/>
+                        <segue destination="yua-UJ-mbf" kind="show" id="QN6-r3-Vwd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbj-3H-otH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3295" y="197"/>
+            <point key="canvasLocation" x="5853.6000000000004" y="289.20539730134936"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="Ezr-iE-rcc">
             <objects>
                 <viewController id="yua-UJ-mbf" customClass="DetailsViewController" customModule="Card_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="caX-w3-FLl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3oB-Jw-Fvt">
@@ -348,19 +347,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aD1-18-G9t">
-                                <rect key="frame" x="142" y="500" width="115" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Update"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Card Bank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccu-sa-DPs">
-                                <rect key="frame" x="160" y="442" width="79" height="50"/>
+                                <rect key="frame" x="119" y="446" width="79" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aD1-18-G9t">
+                                <rect key="frame" x="130" y="536" width="115" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Update"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5PY-1j-CoJ"/>
                         <color key="backgroundColor" red="0.8440575226" green="0.93433437549999998" blue="0.96738189460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -375,14 +374,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uP-4E-15N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4444" y="715.59220389805103"/>
+            <point key="canvasLocation" x="6149.6000000000004" y="1211.2443778110946"/>
         </scene>
         <!--Card View Controller-->
         <scene sceneID="6JF-sz-OMS">
             <objects>
                 <viewController id="jbR-Lj-xrK" customClass="CardViewController" customModule="Card_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="liz-ld-ZOV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="creditcard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MYG-d0-aNp">
@@ -415,21 +414,21 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="9gZ-Sq-kMM">
-                                <rect key="frame" x="7" y="252" width="340" height="60"/>
+                                <rect key="frame" x="8" y="252" width="341" height="60"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="satatDatePiecker:" destination="jbR-Lj-xrK" eventType="valueChanged" id="ieS-FJ-2W0"/>
                                 </connections>
                             </datePicker>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="ccV-kB-mmT">
-                                <rect key="frame" x="-1" y="395" width="348" height="50"/>
+                                <rect key="frame" x="0.0" y="395" width="349" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="endDatePiecker:" destination="jbR-Lj-xrK" eventType="valueChanged" id="SqU-I9-ClV"/>
                                 </connections>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YXl-hl-c9c">
-                                <rect key="frame" x="-1" y="453" width="377" height="133"/>
+                                <rect key="frame" x="0.0" y="453" width="377" height="133"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbO-l5-cD0">
@@ -462,14 +461,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHX-nZ-udA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4444" y="-313"/>
+            <point key="canvasLocation" x="7093.6000000000004" y="-433.13343328335833"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="rLB-hd-9ET">
             <objects>
                 <viewController id="5zc-ak-gcD" customClass="SignInViewController" customModule="Card_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ycG-hB-e2N">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login Account " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cJ-B9-YRL">
@@ -521,7 +520,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQw-Ir-r7j">
-                                <rect key="frame" x="179" y="477" width="16" height="21"/>
+                                <rect key="frame" x="153" y="463" width="16" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -551,20 +550,20 @@
                                 <rect key="frame" x="139" y="78" width="45" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpZ-Tq-MPf">
-                                <rect key="frame" x="91" y="506" width="192" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="sign in with apple"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2d-Sk-lvs">
-                                <rect key="frame" x="91" y="406" width="192" height="48"/>
+                                <rect key="frame" x="65" y="407" width="192" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign in"/>
                                 <connections>
                                     <action selector="handleSignIn:" destination="5zc-ak-gcD" eventType="touchUpInside" id="JTc-bE-zr3"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpZ-Tq-MPf">
+                                <rect key="frame" x="65" y="492" width="192" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="sign in with apple"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q5d-Rz-cJZ"/>
@@ -578,7 +577,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1f-qv-Whb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1303" y="792"/>
+            <point key="canvasLocation" x="2237.5999999999999" y="820.83958020989508"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8YT-cd-gVW">
@@ -596,13 +595,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4AB-Z3-12J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2358" y="197"/>
+            <point key="canvasLocation" x="4944.927536231884" y="289.95535714285711"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3XL-Ms-7iD"/>
+        <segue reference="cPO-4m-Vji"/>
+        <segue reference="H8L-Oa-dQf"/>
         <segue reference="gIt-D0-ubh"/>
-        <segue reference="CuA-A5-sUS"/>
+        <segue reference="YVg-HT-Klm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Card Remainder" width="1080" height="1920"/>
@@ -611,7 +611,6 @@
         <image name="delete.left.fill" catalog="system" width="128" height="104"/>
         <image name="globe.europe.africa.fill" catalog="system" width="128" height="121"/>
         <image name="lock" catalog="system" width="128" height="128"/>
-        <image name="message-icon-design-template-ff734aad72da096f0e49f3d693042135_screen" width="345" height="345"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
