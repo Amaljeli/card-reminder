@@ -8,13 +8,14 @@
 import Foundation
 import Firebase
 struct Card {
+    
 var id = ""
 var imageUrl = ""
 var startDate = ""
 var ExpiryDate = ""
 var type = ""
-var user:User
-    var createdAt:Timestamp?
+var userId = ""
+var createdAt:Timestamp?
     
     
     init(dict:[String:Any],id:String,user:User) {
@@ -28,7 +29,17 @@ var user:User
             self.createdAt = createdAt
         }
         self.id = id
-        self.user = user
+       // self.user = user
+    }
+    
+     init(id: String = "", imageUrl: String = "", startDate: String = "", ExpiryDate: String = "", type: String = "", userId: String, createdAt: Timestamp? = nil) {
+        self.id = id
+        self.imageUrl = imageUrl
+        self.startDate = startDate
+        self.ExpiryDate = ExpiryDate
+        self.type = type
+        self.userId = userId
+        self.createdAt = createdAt
     }
 }
 

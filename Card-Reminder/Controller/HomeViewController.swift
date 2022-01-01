@@ -26,73 +26,60 @@ class HomeViewController: UIViewController {
 getCards()
         // Do any additional setup after loading the view.
     }
+    
+    
     func getCards() {
         let ref = Firestore.firestore()
-        ref.collection("cards").order(by: "createAt" ,descending: true).addSnapshotListener {
+        ref.collection("card").addSnapshotListener {
             snapshot, error in
             if let error = error {
                 print ("DB ERROR Cards",error.localizedDescription)
             }
             if let snapshot = snapshot {
-                print("CARD GANGES:",snapshot.documentChanges.count)
-                snapshot.documentChanges.forEach { diff in
-                    let cardData = diff.document.data()
-                    switch diff.type {
-                    case .added :
-                        
-                        if let  userId = cardData["userId"] as? String {
-                            ref.collection("users").document(userId).getDocument { userSnapshot, error in
-                                if let error = error {
-                                    print ("Error user Data",error.localizedDescription)
-                                }
-                                if let userSnapshot = userSnapshot,
-                                   let userData = userSnapshot.data (){
-                                    let user = User(dict: userData)
-//
-                                    let card = Card(dict:cardData,id:diff.document.documentID,user:user)
-                                    self.cardTableView.beginUpdates()
-                                    if snapshot.documentChanges.count != 1 {
-                                        self.cards.append(card)
-                                        
-                                        self.cardTableView.insertRows(at: [IndexPath(row:self.cards.count - 1,section: 0)],with: .automatic)
-                                    }else {
-                                        self.cards.insert(card,at:0)
-                                      
-                                        self.cardTableView.insertRows(at: [IndexPath(row: 0,section: 0)],with: .automatic)
-                                    }
-                                  
-                                    self.cardTableView.endUpdates()
-                                    
-                                    }
-                                    
-                                }
-                            }
-                    case .modified:
-                        let cardId = diff.document.documentID
-
-                        if let currentCard = self.cards.first(where: {$0.id == cardId}),
-                           let updateIndex = self.cards.firstIndex(where: {$0.id == cardId}){
-                            let newCard = Card(dict:cardData, id: cardId, user: currentCard.user)
-                            self.cards[updateIndex] = newCard
-                         
-                                self.cardTableView.beginUpdates()
-                                self.cardTableView.deleteRows(at: [IndexPath(row: updateIndex,section: 0)], with: .left)
-                                self.cardTableView.insertRows(at: [IndexPath(row: updateIndex,section: 0)],with: .left)
-                                self.cardTableView.endUpdates()
-                        
-                        }
-                        
-                    case .removed:
-                        let cardId = diff.document.documentID
-                        if let deleteIndex = self.cards.firstIndex(where: {$0.id == cardId}){
-                            self.cards.remove(at:deleteIndex)
-                            self.cardTableView.beginUpdates()
-                            self.cardTableView.deleteRows(at: [IndexPath(row:deleteIndex,section: 0)], with: .automatic)
-                            self.cardTableView.endUpdates()
-                        }
-                        
-                    }
+                print("CARD GANGES:",snapshot.documents.count)
+                
+                snapshot.documents.forEach { docement in
+                    let  userId = docement.get("userId") as? String ?? ""
+                    let imageUrl = docement.get("imageUrl") as? String ?? ""
+                  print(userId)
+                    let card =  Card(id: "", imageUrl: imageUrl, startDate: "12-02-2019", ExpiryDate: "12-02-2022", type: "Card Bank", userId: userId)
+                    self.cards.append(card)
+                    self.cardTableView.reloadData()
+                    
                 }
+                let dateCreatedAt = Date(timeIntervalSince1970: 1640544212)
+                print("difference \(self.getDifferenceInDays(date: dateCreatedAt))")
+
+//                snapshot.documents.forEach { documen
+//                    if let  userId = cardData["userId"] as? String {
+//                        ref.collection("users").document(userId).getDocument { userSnapshot, error in
+//                            if let error = error {
+//                                print ("Error user Data",error.localizedDescription)
+//                            }
+////                            if let userSnapshot = userSnapshot,
+////                               let userData = userSnapshot.data (){
+////                                let user = User(dict: userData)
+//////
+////                                let card = Card(dict:cardData,id:diff.document.documentID,user:user)
+//                                self.cardTableView.beginUpdates()
+////                                if snapshot.documentChanges.count != 1 {
+////                                    self.cards.append(card)
+////
+////                                    self.cardTableView.insertRows(at: [IndexPath(row:self.cards.count - 1,section: 0)],with: .automatic)
+////                                }else {
+////                                    self.cards.insert(card,at:0)
+////
+////                                    self.cardTableView.insertRows(at: [IndexPath(row: 0,section: 0)],with: .automatic)
+////                                }
+////
+//                                self.cardTableView.endUpdates()
+////
+////                                }
+////
+//                            }
+//                        }
+//
+//                }
             }
             }
         
@@ -125,6 +112,14 @@ getCards()
         }
         
     }
+    
+    func getDifferenceInDays(date: Date) -> Int {
+         let currentDate = Date()
+        let component: Set<Calendar.Component> = [.month,.day, .hour]
+         let difference = Calendar.current.dateComponents(component, from: currentDate, to: date)
+        difference.month
+         return difference.day ?? 0
+     }
            
 }
 extension HomeViewController: UITableViewDataSource {
@@ -138,7 +133,43 @@ extension HomeViewController: UITableViewDataSource {
         
     }
     
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("delete")
+            tableView.beginUpdates()
+            cards.remove(at:indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+//            self.activityIndicator.stopAnimating()
+            self.navigationController?.popViewController(animated: true)
+//            let ref = Firestore.firestore().collection("posts")
+//            if let selectedCard = selectedCard {
+//                Activity.showIndicator(parentView: self.view, childView: activityIndicator)
+//                ref.document(selectedCard.id).delete { error in
+//                    if let error = error {
+//                        print("Error in db delete",error)
+//                    }else {
+//                        let storageRef = Storage.storage().reference(withPath: "posts/\(selectedCard.userId)/\(selectedCard.id)")
+//
+//                        storageRef.delete { error in
+//                            if let error = error {
+//                                print("Error in storage delete",error)
+//                            } else {
+//                                self.activityIndicator.stopAnimating()
+//                                self.navigationController?.popViewController(animated: true)
+//                            }
+//                        }
+//
+//                    }
+//                }
+//            }
+//
+//    }
+//
+
+        }
+    }
+
 }
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -149,7 +180,8 @@ extension HomeViewController: UITableViewDelegate {
         selectedCardImage = cell.CardImageView.image
         selectedCard = cards[indexPath.row]
         if let currentUser = Auth.auth().currentUser,
-           currentUser.uid == cards[indexPath.row].user.id{
+           currentUser.uid == cards[indexPath.row].userId{
+            
             performSegue(withIdentifier: "toCardVC", sender: self)
         }else {
             performSegue(withIdentifier: "toDetailsVC", sender: self)
