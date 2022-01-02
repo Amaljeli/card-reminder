@@ -1,0 +1,31 @@
+/* 
+  LOCALIZED.strings
+  Card-Reminder
+
+  Created by Amal Jeli on 29/05/1443 AH.
+  
+*/
+"SignUp"="S'inscrire";
+"Sign in"="S'identifier";
+"Let's Get Started! "="Commençons!";
+"Create an account!"="Créer un compte!";
+"Name"="Nom";
+"Email"="E-mail";
+"Password"="Mot de passe";
+"confirm password"="Confirmez le mot de passe";
+"SignUp"="S'inscrire";
+"Login Account"="Connexion";
+"Hello, welcome back to account!"="Bonjour, bienvenue sur le compte!";
+"Email"="E-mail";
+"Password"="Mot de passe";
+"Sign in"="S'identifier";
+"Welcome!"="Bienvenu!";
+"Add new card"="Ajouter une nouvelle carte";
+"Start Date"="Date de début";
+"End Date"="Date de fin";
+"Expire"="Expirer";
+"Start Date"="Date de début";
+"Expiry Date"="Date d'expiration";
+"Add"="Ajouter";
+"Start Date"="Date de fin";
+"End Date"="Date de fin";

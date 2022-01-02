@@ -15,7 +15,9 @@ class CardCell: UITableViewCell {
     @IBOutlet weak var taypeLabel: UILabel!
     @IBOutlet weak var remainingPeriodLabel: UILabel!
     @IBOutlet weak var remainingPeriodLabelImage: UIImageView!
+    @IBOutlet weak var TaypeLabelCell: UILabel!
     
+    @IBOutlet weak var expireDaysLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,12 +31,15 @@ class CardCell: UITableViewCell {
             // Configure the view for the selected state
         }
 
-    
     func configure(with card:Card) -> UITableViewCell {
         CardImageView.loadImageUsingCache(with: card.imageUrl)
         nuStartDateLabel.text = card.startDate
         nuEndDateLabel.text = card.ExpiryDate
         taypeLabel.text = card.type
+        let expireDate = card.ExpiryDate.convertToDate()
+        let differenceFromToday = getDifferenceInDays(date: expireDate)
+        expireDaysLabel.text = differenceFromToday
+       // TaypeLabelCell = card.
         return self
         
     }
@@ -45,4 +50,34 @@ class CardCell: UITableViewCell {
     
     
     
+    func getDifferenceInDays(date: Date) -> String {
+        let currentDate = Date()
+        let component: Set<Calendar.Component> = [.year, .month, .day]
+        let difference = Calendar.current.dateComponents(component, from: currentDate, to: date)
+        var differenceString = ""
+        if difference.year != 0 {
+            differenceString += " year: \(difference.year ?? 0)"
+        }
+        
+        if difference.month != 0 {
+            differenceString += " month: \(difference.month ?? 0)"
+        }
+        
+        if difference.day != 0 {
+            differenceString += " day: \(difference.day ?? 0)"
+        }
+        
+        return differenceString
+    }
+    
 }
+extension String {
+    func convertToDate() -> Date {
+          let dateFormatter = DateFormatter()
+          dateFormatter.dateFormat = "dd-MM-yyyy"
+          dateFormatter.locale = Locale.init(identifier: "en_GB")
+          guard let dateObj = dateFormatter.date(from: self) else {return Date()}
+          return dateObj
+      }
+}
+

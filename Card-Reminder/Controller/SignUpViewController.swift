@@ -8,8 +8,54 @@
 import UIKit
 import Firebase
 class SignUpViewController: UIViewController {
-let imagePickerController = UIImagePickerController ()
+    let imagePickerController = UIImagePickerController ()
     var activityIndicator = UIActivityIndicatorView ()
+    
+    @IBOutlet weak var letsGetStarted: UILabel!{
+        didSet {
+    letsGetStarted.text = "Let's Get Started!".localized
+        }
+    }
+        
+    @IBOutlet weak var createAnAccount: UILabel!{
+    didSet {
+        createAnAccount.text = "Create an account!".localized
+    }
+}
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    {
+    didSet {
+        nameLabel.text = "Name".localized
+    }
+}
+    @IBOutlet weak var EmailLabel: UILabel!
+    {
+    didSet {
+        EmailLabel.text = "Email".localized
+    }
+}
+    @IBOutlet weak var PasswordLabel: UILabel!
+    {
+    didSet {
+        PasswordLabel.text = "Password".localized
+    }
+}
+    @IBOutlet weak var confirmPasswordLabel: UILabel!
+    {
+    didSet {
+        confirmPasswordLabel.text = "confirm password".localized
+    }
+}
+    @IBOutlet weak var SignUpLabel: UIButton!
+    {
+        didSet{
+            SignUpLabel.setTitle("SignUp".localized, for: .normal)
+        }
+    }
+    
+    
+    
     
     @IBOutlet weak var userImageView: UIImageView!{
         didSet {
@@ -38,11 +84,37 @@ let imagePickerController = UIImagePickerController ()
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func eyePassword(_ sender: AnyObject) {
+        PasswordTextField.isSecureTextEntry.toggle()
+                if  PasswordTextField.isSecureTextEntry {
+                    if let image = UIImage(systemName: "eye.fill") {
+                        sender.setImage(image, for: .normal)
+                    }
+                } else {
+                    if let image = UIImage(systemName: "eye.slash.fill") {
+                        sender.setImage(image, for: .normal)
+                    }
+                }
+            }
+        
+    @IBAction func eyePasswordConferm(_ sender: AnyObject) {
+        PasswordTextField.isSecureTextEntry.toggle()
+                if  PasswordTextField.isSecureTextEntry {
+                    if let image = UIImage(systemName: "eye.fill") {
+                        sender.setImage(image, for: .normal)
+                    }
+                } else {
+                    if let image = UIImage(systemName: "eye.slash.fill") {
+                        sender.setImage(image, for: .normal)
+                    }
+                }
+            }
+    
     @IBAction func handleSignUp(_ sender: Any) {
         if let image = userImageView.image,
            let imageData = image.jpegData(compressionQuality: 0.75),
-            let name = NameTextField.text,
-            let email = EmailTextField.text,
+           let name = NameTextField.text,
+           let email = EmailTextField.text,
            let password = PasswordTextField.text,
            let confirPassword = ConfirTextField.text,
            password == confirPassword {
@@ -50,7 +122,7 @@ let imagePickerController = UIImagePickerController ()
             Auth.auth().createUser(withEmail: email,password: password) { authResult, error in
                 if let error = error {
                     print ("Registration Auth Error",error.localizedDescription)
-
+                    
                 }
                 if let authResult = authResult {
                     let storageRef = Storage.storage().reference(withPath:"users/\(authResult.user.uid)")
@@ -59,39 +131,39 @@ let imagePickerController = UIImagePickerController ()
                     storageRef.putData(imageData, metadata: uploadMeta) { storageMeta, error in
                         if let error = error {
                             print("Registration Storage Error",error.localizedDescription)
-                        
-                }
-                storageRef.downloadURL { url, error in
-                    if let error = error {
-                        print("Registration Storage Download Url Error",error.localizedDescription)
-//
-                    }
-                    if let url = url {
-                    print ("URL",url.absoluteString)
-                    let db = Firestore.firestore()
-                    let userData: [String:String] = [
-                        "id":authResult.user.uid,
-                        "name":name,
-                        "email":email,
-                        "imageUrl":url.absoluteString
-                        ]
-                        db.collection("users").document(authResult.user.uid).setData(userData) { error in
+                            
+                        }
+                        storageRef.downloadURL { url, error in
                             if let error = error {
-                                print("Registration Database error",error.localizedDescription)
-                            }else {
-                                if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
-                                    vc.modalPresentationStyle = .fullScreen
-                                    Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
-                                    self.present(vc, animated: true, completion: nil)
-                    
-                }
-            }
-            }
-            
-    }
-    
-
-}
+                                print("Registration Storage Download Url Error",error.localizedDescription)
+                                //
+                            }
+                            if let url = url {
+                                print ("URL",url.absoluteString)
+                                let db = Firestore.firestore()
+                                let userData: [String:String] = [
+                                    "id":authResult.user.uid,
+                                    "name":name,
+                                    "email":email,
+                                    "imageUrl":url.absoluteString
+                                ]
+                                db.collection("users").document(authResult.user.uid).setData(userData) { error in
+                                    if let error = error {
+                                        print("Registration Database error",error.localizedDescription)
+                                    }else {
+                                        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
+                                            vc.modalPresentationStyle = .fullScreen
+                                            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                            self.present(vc, animated: true, completion: nil)
+                                            
+                                        }
+                                    }
+                                }
+                                
+                            }
+                            
+                            
+                        }
                     }
                 }
             }
@@ -99,7 +171,7 @@ let imagePickerController = UIImagePickerController ()
     }
 }
 extension SignUpViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
-   
+    
     @objc func selectImage() {
         showAlart()
     }
@@ -136,4 +208,4 @@ extension SignUpViewController: UIImagePickerControllerDelegate,UINavigationCont
     }
 }
 
-        
+

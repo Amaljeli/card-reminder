@@ -18,80 +18,134 @@ class CardViewController: UIViewController {
             cardImageView.addGestureRecognizer(tapGesture)
         }
     }
+//    var type = ""
+    @IBOutlet weak var endPicker: UIDatePicker!
     
-//    @IBOutlet weak var startDate: UIDatePicker!
-//    @IBOutlet weak var endDate: UIDatePicker!
+  
     
-    @IBOutlet weak var startDateTextField: UITextField!
-    let datePicker = UIDatePicker ()
+    @IBOutlet weak var startDateLabel: UILabel!
     
-    @IBOutlet weak var endDateTextField: UITextField!
+    @IBOutlet weak var endDateLabel: UILabel!
+    @IBOutlet weak var startPiecker: UIDatePicker!
+  
+    
     @IBOutlet weak var TypePickerView: UIPickerView!
     let activityIndicator = UIActivityIndicatorView()
-    var arrayOfTaype = ["Card Bank","Passpot","Driving license","Id Card","Other Card"]
+    var arrayOfTaype = ["Card Bank","Passpot","Driving license","Id Card","Iqama","Other Card"]
+    var selectedType = "Card Bank"
     override func viewDidLoad() {
         super.viewDidLoad()
-        func crateDatePicker () {
-            
-        }
+        
+        
+//        print(type,"?????")
+//        __________________________________________________
+//        crateDatePicker()
+//        func crateDatePicker () {
+//            let toolbar = UIToolbar()
+//            toolbar.sizeToFit()
+//
+////            let doneBtn = UIBarButtonItem(barButtonSystemItem: .done , target: nil, action: #selector(donePressed))
+//            let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+//            toolbar.setItems([doneBtn], animated: true)
+//            startDateTextField.inputAccessoryView = toolbar
+//
+//            startDateTextField.inputView = datePicker
+//
+//        }
+//
+//        @objc func donePressed () {
+//
+//                }
+
+//        _____________________________________
     
         TypePickerView.delegate = self
         TypePickerView.dataSource = self
         
         if let selectedCard = selectedCard,
         let selectedImage = selectedCradImage {
-            endDateTextField.text = selectedCard.startDate
-            endDateTextField.text = selectedCard.ExpiryDate
+//            startPiecker.date =  startPiecker
+            startDateLabel.text = selectedCard.startDate
+            endDateLabel.text = selectedCard.ExpiryDate
             cardImageView.image = selectedImage
             actionButton.setTitle("Update Card", for: .normal)
-            let deleteBarButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(handleDelete))
-            self.navigationItem.rightBarButtonItem = deleteBarButton
+//            let deleteBarButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(handleDelete))
+//            self.navigationItem.rightBarButtonItem = deleteBarButton
         }else {
             actionButton.setTitle("Add Card", for: .normal)
-            self.navigationItem.rightBarButtonItem = nil
+            startDateLabel.text = Date().convertDateToString()
+            endDateLabel.text = Date().convertDateToString()
+//            self.navigationItem.rightBarButtonItem = nil
             
         }
         // Do any additional setup after loading the view.
     }
-   
-    @objc func handleDelete (_ sender: UIBarButtonItem) {
-        let ref = Firestore.firestore().collection("posts")
-        if let selectedCard = selectedCard {
-            Activity.showIndicator(parentView: self.view, childView: activityIndicator)
-            ref.document(selectedCard.id).delete { error in
-                if let error = error {
-                    print("Error in db delete",error)
-                }else {
-                    let storageRef = Storage.storage().reference(withPath: "posts/\(selectedCard.user.id)/\(selectedCard.id)")
-                    
-                    storageRef.delete { error in
-                        if let error = error {
-                            print("Error in storage delete",error)
-                        } else {
-                            self.activityIndicator.stopAnimating()
-                            self.navigationController?.popViewController(animated: true)
-                        }
-                    }
-                    
-                }
-            }
-        }
-
-}
+    @IBAction func satatDatePiecker(_ sender: UIDatePicker) {
+        startDateLabel.text = sender.date.convertDateToString()
+    }
+        
+//        let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "yyyy-MM-dd"
+//        startDateLabel.text = "\(dateFormatter.string(from: sender.date) )"
+        
+    
+    
+    @IBAction func endDatePiecker(_ sender: UIDatePicker) {
+        endDateLabel.text = sender.date.convertDateToString()
+    }
+    
+        //        let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "yyyy-MM-dd"
+       
+        
+//        endDateLabel.text = "\(dateFormatter.string(from: sender.date) )"
+      
+    
+    
+    
+    
+    
+    
+//    @objc func handleDelete (_ sender: UIBarButtonItem) {
+//        let ref = Firestore.firestore().collection("cards")
+//        if let selectedCard = selectedCard {
+//            Activity.showIndicator(parentView: self.view, childView: activityIndicator)
+//            ref.document(selectedCard.id).delete { error in
+//                if let error = error {
+//                    print("Error in db delete",error)
+//                }else {
+//                    let storageRef = Storage.storage().reference(withPath: "cards/\(selectedCard.userId)/\(selectedCard.id)")
+//
+//                    storageRef.delete { error in
+//                        if let error = error {
+//                            print("Error in storage delete",error)
+//                        } else {
+//                            self.activityIndicator.stopAnimating()
+//                            self.navigationController?.popViewController(animated: true)
+//                        }
+//                    }
+//
+//                }
+//            }
+//        }
+//
+//}
     @IBAction func handleActionTouch(_ sender: Any) {
+//
         if let image = cardImageView.image,
-           let imageData = image.jpegData(compressionQuality: 0.75),
-           let startDate = startDateTextField.text,
-           let endDate = endDateTextField.text,
+           let imageData = image.jpegData(compressionQuality: 0.5),
+           let startDate = startDateLabel.text,
+           let endDate = endDateLabel.text,
+           //           let type = TypePickerView,
            let currentUser = Auth.auth().currentUser {
             Activity.showIndicator(parentView: self.view, childView: activityIndicator)
-            var postId = ""
+            var cardId = ""
             if let selectedCard = selectedCard {
-                postId = selectedCard.id
+                cardId = selectedCard.id
             }else {
-                postId = "\(Firebase.UUID())"
+                cardId = "\(Firebase.UUID())"
             }
-            let storageRef = Storage.storage().reference(withPath: "posts/\(currentUser.uid)/\(postId)")
+            let storageRef = Storage.storage().reference(withPath: "posts/\(currentUser.uid)/\(cardId)")
             let updloadMeta = StorageMetadata.init()
             updloadMeta.contentType = "image/jpeg"
             storageRef.putData(imageData, metadata: updloadMeta) { storageMeta, error in
@@ -105,38 +159,52 @@ class CardViewController: UIViewController {
                         let ref = db.collection("card")
                         if let selectedCard = self.selectedCard {
                             cardData = [
-                                "userId":selectedCard.user.id,
+                                "cardId": cardId,
+                                "userId":selectedCard.userId,
                                 "startDate":startDate,
                                 "endDate":endDate,
+                                "type": self.selectedType,
                                 "imageUrl":url.absoluteString,
                                 "createdAt":selectedCard.createdAt ?? FieldValue.serverTimestamp(),
                                 "updatedAt": FieldValue.serverTimestamp()
                             ]
+                            ref.document(currentUser.uid).collection("card").document(cardId).updateData(cardData) { error in
+                                if let error = error {
+                                    print("FireStore Error",error.localizedDescription)
+                                }
+                                Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                self.navigationController?.popViewController(animated: true)
+                            }
                         }else {
                             cardData = [
+                                "cardId": cardId,
                                 "userId":currentUser.uid,
                                 "startDate":startDate,
                                 "endDate":endDate,
+                                "type": self.selectedType,
                                 "imageUrl":url.absoluteString,
                                 "createdAt":FieldValue.serverTimestamp(),
                                 "updatedAt": FieldValue.serverTimestamp()
                             ]
-                        }
-                        ref.document(postId).setData(cardData) { error in
-                            if let error = error {
-                                print("FireStore Error",error.localizedDescription)
+                            ref.document(currentUser.uid).collection("card").document(cardId).setData(cardData) { error in
+                                if let error = error {
+                                    print("FireStore Error",error.localizedDescription)
+                                }
+                                Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                self.navigationController?.popViewController(animated: true)
                             }
-                            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
-                            self.navigationController?.popViewController(animated: true)
                         }
+                        // update
+                        // add new
+                        
                     }
                 }
             }
         }
         
     }
-        
-    }
+}
+
 
 
 extension CardViewController:UIPickerViewDelegate, UIPickerViewDataSource {
@@ -146,21 +214,24 @@ extension CardViewController:UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func numberOfComponents (in pickerView: UIPickerView) -> Int {
-
             return 1
          
-       
-        }
+               }
         
    
 //
-    func CardpickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let Taype = arrayOfTaype[pickerView.selectedRow(inComponent: 0)]
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedType = arrayOfTaype[row]
+        
+
         
 //        ابغى هنا اربط من ليبل اللي ف صفحه الديتيلز
 //        pickerLabel.text = ("\(Taype)")
     }
-    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//      type = arrayOfTaype[row]
+        return arrayOfTaype[row]
+    }
     }
     
 
@@ -202,3 +273,13 @@ extension CardViewController: UIImagePickerControllerDelegate, UINavigationContr
     }
     
 }
+extension Date {
+    
+    func convertDateToString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        return dateFormatter.string(from: self)
+    }
+    
+}
+

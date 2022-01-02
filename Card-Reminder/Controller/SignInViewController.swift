@@ -11,6 +11,40 @@ class SignInViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView ()
     @IBOutlet weak var EmailTaxtField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
+    @IBOutlet weak var helloLabel: UILabel!
+    
+    {
+    didSet {
+        helloLabel.text = "Hello, welcome back to account!".localized
+    }
+}
+    
+    @IBOutlet weak var EmailLabel: UILabel!
+    
+    {
+    didSet {
+        EmailLabel.text = "Email".localized
+    }
+}
+    
+    @IBOutlet weak var passwordLabel: UILabel!
+    
+    {
+    didSet {
+        passwordLabel.text = "Password".localized
+    }
+}
+    
+    @IBOutlet weak var signInLabel: UIButton!
+    
+    {
+    didSet {
+    signInLabel.setTitle("Sign in".localized, for: .normal)
+}
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
