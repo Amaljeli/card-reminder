@@ -75,9 +75,12 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="CardImageView" destination="KSS-J4-B8j" id="0qP-Re-Uf4"/>
+                <outlet property="endDatelabel" destination="BQ6-sj-4VG" id="xEG-xG-Wit"/>
                 <outlet property="expireDaysLabel" destination="0p1-1W-90v" id="9fn-PB-qXd"/>
+                <outlet property="expireLabel" destination="NNu-9F-3YK" id="PcE-Xf-TTy"/>
                 <outlet property="nuEndDateLabel" destination="IgQ-w8-vPm" id="7w1-fZ-6Fk"/>
                 <outlet property="nuStartDateLabel" destination="Wcz-le-8kx" id="MzH-MF-oRg"/>
+                <outlet property="startDatelabel" destination="xTS-2g-GFy" id="OKt-Kj-POa"/>
                 <outlet property="taypeLabel" destination="eym-K7-bf0" id="Mgz-G6-eTL"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="107.8125"/>

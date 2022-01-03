@@ -28,6 +28,19 @@ class HomeViewController: UIViewController {
     }
     }
    
+    @IBOutlet weak var welcomeLabel: UILabel!
+    {
+    didSet {
+        welcomeLabel.text = "Welcome!".localized
+    }
+}
+    
+    @IBOutlet weak var addNewCardLabel: UIButton! {
+        
+        didSet {
+            addNewCardLabel.setTitle("Add new card".localized, for: .normal)
+    }
+        }
     
     @IBOutlet weak var userNameLable: UILabel!
     override func viewDidLoad() {

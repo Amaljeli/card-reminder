@@ -18,7 +18,30 @@ class CardViewController: UIViewController {
             cardImageView.addGestureRecognizer(tapGesture)
         }
     }
-//    var type = ""
+    
+    @IBOutlet weak var deiStartDate: UILabel!
+    {
+    didSet {
+        deiStartDate.text = "Start Date".localized
+    }
+}
+    
+    @IBOutlet weak var deiEndDate: UILabel!
+    {
+    didSet {
+        deiEndDate.text = "Expiry Date".localized
+    }
+}
+    
+    @IBOutlet weak var addLabel: UIButton!
+    
+    {
+        didSet{
+            addLabel.setTitle("Add".localized, for: .normal)
+        }
+    }
+    
+    //    var type = ""
     @IBOutlet weak var endPicker: UIDatePicker!
     
   
@@ -33,6 +56,8 @@ class CardViewController: UIViewController {
     let activityIndicator = UIActivityIndicatorView()
     var arrayOfTaype = ["Card Bank","Passpot","Driving license","Id Card","Iqama","Other Card"]
     var selectedType = "Card Bank"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

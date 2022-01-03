@@ -18,6 +18,21 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var endDateLabel: UILabel!
 
     @IBOutlet weak var TaypeLabel: UILabel!
+    
+    @IBOutlet weak var desStartDate: UILabel!
+    {
+    didSet {
+        desEndDate.text = "Start Date".localized
+    }
+}
+    
+    @IBOutlet weak var desEndDate: UILabel!
+    {
+    didSet {
+        desEndDate.text = "End Date".localized
+    }
+}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //

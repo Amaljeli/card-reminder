@@ -300,28 +300,28 @@
                                     <action selector="addNewCardAction:" destination="cwG-6h-nWF" eventType="touchUpInside" id="6LI-Wh-swM"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="creditcard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oiN-kB-T0o">
-                                <rect key="frame" x="187" y="243.5" width="33" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5fO-WL-bur">
                                 <rect key="frame" x="142" y="91.5" width="91" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efu-sJ-dei">
-                                <rect key="frame" x="16" y="200" width="117" height="30"/>
+                                <rect key="frame" x="16" y="200" width="104.5" height="27.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amal jeli " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b94-CG-Jnn">
-                                <rect key="frame" x="126" y="200" width="222" height="30"/>
+                                <rect key="frame" x="120.5" y="200" width="88" height="27.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="creditcard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oiN-kB-T0o">
+                                <rect key="frame" x="171" y="246.5" width="33" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8zt-vO-cJT"/>
                         <color key="backgroundColor" red="0.79070131320000003" green="0.87527140979999996" blue="0.9062298647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -336,8 +336,10 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addNewCardLabel" destination="ewr-Ie-CeV" id="bun-iK-GbC"/>
                         <outlet property="cardTableView" destination="eVn-C7-5bV" id="zlO-nI-uGu"/>
                         <outlet property="userNameLable" destination="b94-CG-Jnn" id="TTP-Gd-qMw"/>
+                        <outlet property="welcomeLabel" destination="efu-sJ-dei" id="To1-Gz-mnB"/>
                         <segue destination="yua-UJ-mbf" kind="show" identifier="toDetailsVC" id="QN6-r3-Vwd"/>
                     </connections>
                 </viewController>
@@ -400,6 +402,8 @@
                     <connections>
                         <outlet property="TaypeLabel" destination="Ccu-sa-DPs" id="7yS-pc-JQw"/>
                         <outlet property="cardImageView" destination="3oB-Jw-Fvt" id="8Gk-JV-Wfn"/>
+                        <outlet property="desEndDate" destination="yZV-qt-1Sl" id="ROk-62-o5I"/>
+                        <outlet property="desStartDate" destination="Zqf-vc-DKs" id="bnh-Dv-7Vy"/>
                         <outlet property="endDateLabel" destination="ERN-13-NXZ" id="VdT-tD-UlX"/>
                         <outlet property="startDateLabel" destination="KAO-46-DEc" id="BSe-6j-dbV"/>
                     </connections>
@@ -484,10 +488,13 @@
                     <connections>
                         <outlet property="TypePickerView" destination="YXl-hl-c9c" id="qdQ-hs-7Mf"/>
                         <outlet property="actionButton" destination="0h4-LM-UYe" id="UbT-7U-nw1"/>
+                        <outlet property="addLabel" destination="0h4-LM-UYe" id="316-x1-Wdc"/>
                         <outlet property="cardImageView" destination="MYG-d0-aNp" id="F2R-6a-Ipp"/>
+                        <outlet property="deiEndDate" destination="tIK-dB-A2b" id="Xej-Jh-eBC"/>
+                        <outlet property="deiStartDate" destination="rau-hP-isN" id="cJC-9a-kk4"/>
                         <outlet property="endDateLabel" destination="IbO-l5-cD0" id="NSW-br-1jc"/>
                         <outlet property="endPicker" destination="ccV-kB-mmT" id="vzT-9n-Zy2"/>
-                        <outlet property="startDateLabel" destination="DQm-en-8Oq" id="QNp-nE-RLm"/>
+                        <outlet property="startDateLabel" destination="rau-hP-isN" id="I67-Ck-pju"/>
                         <outlet property="startPiecker" destination="9gZ-Sq-kMM" id="Ubn-1f-Wqm"/>
                     </connections>
                 </viewController>

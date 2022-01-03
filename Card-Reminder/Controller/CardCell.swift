@@ -19,6 +19,28 @@ class CardCell: UITableViewCell {
     
     @IBOutlet weak var expireDaysLabel: UILabel!
     
+    @IBOutlet weak var startDatelabel: UILabel!
+    
+    {
+    didSet {
+        startDatelabel.text = "Start Date".localized
+    }
+}
+
+    @IBOutlet weak var endDatelabel: UILabel!
+    {
+    didSet {
+        endDatelabel.text = "End Date".localized
+    }
+}
+    @IBOutlet weak var expireLabel: UILabel!
+    {
+    didSet {
+        expireLabel.text = "Expire".localized
+    }
+}
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
