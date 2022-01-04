@@ -6,31 +6,42 @@
   
 */
 
-"Sign in"="Sign in";
-"SignUp"="SignUp";
-"Let's Get Started!" ="Let's Get Started!";
-"Create an account!"="Create an account!";
-"Name"="Name";
-"Email"="Email";
-"Password"="Password";
-"confirm password"="Password";
-"SignUp"="SignUp";
+"SignIn" = "Sign in";
+"SignUp" = "SignUp";
+"LetsGetStarted!" = "Let's Get Started!";
+"CreateAnAccount!" = "Create an account!";
+"Name" = "Name";
+"Email" = "Email";
+"Password" = "Password";
+"confirmPassword" = "Password";
+"SignUp" = "SignUp";
 
-"Hello, welcome back to account!"="Hello, welcome back to account!";
-"Email"="Email";
-"Password"="Password";
-"Sign in"="Sign in";
+"HelloWelcomeBackToAccount!" = "Hello, welcome back to account!";
 
-"Welcome!"="Welcome!";
-"Add new card"="Add new card";
 
-"Start Date"="Start Date";
-"End Date"="End Date";
-"Expire"="Expire";
+"SignIn" = "Sign in";
 
-"Start Date"="Start Date";
-"Expiry Date"="Expiry Date";
-"Add"="Add";
+"Welcome!" = "Welcome!";
+"AddNewCard" = "Add new card";
 
-"Start Date"="Start Date";
-"End Date"="End Date";
+"StartDate" = "Start Date";
+"EndDate" = "End Date";
+"Expire" = "Expire";
+
+"StartDate" = "Start Date";
+"ExpiryDate" = "Expiry Date";
+"Add Card" = "Add Card";
+"Update Card" = "Update Card";
+"StartDate" = "Start Date";
+"EndDate" = "End Date";
+
+"CardReminder" = "Card Reminder";
+"CardBank" = "Card Bank";
+"Id Card" = "Id Card";
+"14-02-2020" = "٢٠٢٠/٢/١٤";
+"14-02-2022" = "٢٠٢٢/٢/١٤";
+    "Passpot" = "Passpot";
+"Driving license" = "Driving license";
+"Id Card" = "Id Card";
+"Other Card" = "Id Card";
+"year" = "year";

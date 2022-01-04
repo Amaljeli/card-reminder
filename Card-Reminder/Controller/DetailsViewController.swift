@@ -22,14 +22,14 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var desStartDate: UILabel!
     {
     didSet {
-        desEndDate.text = "Start Date".localized
+        desEndDate.text = "StartDate".localized
     }
 }
     
     @IBOutlet weak var desEndDate: UILabel!
     {
     didSet {
-        desEndDate.text = "End Date".localized
+        desEndDate.text = "EndDate".localized
     }
 }
     

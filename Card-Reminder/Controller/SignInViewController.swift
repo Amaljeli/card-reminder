@@ -15,7 +15,7 @@ class SignInViewController: UIViewController {
     
     {
     didSet {
-        helloLabel.text = "Hello, welcome back to account!".localized
+        helloLabel.text = "HelloWelcomeBackToAccount!".localized
     }
 }
     
@@ -39,7 +39,7 @@ class SignInViewController: UIViewController {
     
     {
     didSet {
-    signInLabel.setTitle("Sign in".localized, for: .normal)
+    signInLabel.setTitle("SignIn".localized, for: .normal)
 }
     }
     

@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var addNewCardLabel: UIButton! {
         
         didSet {
-            addNewCardLabel.setTitle("Add new card".localized, for: .normal)
+            addNewCardLabel.setTitle("AddNewCard".localized, for: .normal)
     }
         }
     

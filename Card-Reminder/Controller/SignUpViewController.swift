@@ -13,13 +13,13 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var letsGetStarted: UILabel!{
         didSet {
-    letsGetStarted.text = "Let's Get Started!".localized
+    letsGetStarted.text = "LetsGetStarted!".localized
         }
     }
         
     @IBOutlet weak var createAnAccount: UILabel!{
     didSet {
-        createAnAccount.text = "Create an account!".localized
+        createAnAccount.text = "CreateAnAccount!".localized
     }
 }
     
@@ -74,9 +74,18 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var NameTextField: UITextField!
     
     @IBOutlet weak var EmailTextField: UITextField!
-    @IBOutlet weak var PasswordTextField: UITextField!
+    @IBOutlet weak var PasswordTextField: UITextField!{
+        didSet{
+            PasswordTextField.isSecureTextEntry = true
+        }
+    }
     
-    @IBOutlet weak var ConfirTextField: UITextField!
+    @IBOutlet weak var ConfirTextField: UITextField!{
+        didSet{
+            ConfirTextField.isSecureTextEntry = true
+        }
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -22,14 +22,14 @@ class CardViewController: UIViewController {
     @IBOutlet weak var deiStartDate: UILabel!
     {
     didSet {
-        deiStartDate.text = "Start Date".localized
+        deiStartDate.text = "StartDate".localized
     }
 }
     
     @IBOutlet weak var deiEndDate: UILabel!
     {
     didSet {
-        deiEndDate.text = "Expiry Date".localized
+        deiEndDate.text = "ExpiryDate".localized
     }
 }
     
@@ -40,6 +40,8 @@ class CardViewController: UIViewController {
             addLabel.setTitle("Add".localized, for: .normal)
         }
     }
+    
+    
     
     //    var type = ""
     @IBOutlet weak var endPicker: UIDatePicker!
@@ -54,9 +56,9 @@ class CardViewController: UIViewController {
     
     @IBOutlet weak var TypePickerView: UIPickerView!
     let activityIndicator = UIActivityIndicatorView()
-    var arrayOfTaype = ["Card Bank","Passpot","Driving license","Id Card","Iqama","Other Card"]
+    var arrayOfTaype = ["Card Bank".localized,"Passpot".localized,"Driving license".localized,"Id Card".localized,"Other Card".localized]
     var selectedType = "Card Bank"
-    
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,11 +95,12 @@ class CardViewController: UIViewController {
             startDateLabel.text = selectedCard.startDate
             endDateLabel.text = selectedCard.ExpiryDate
             cardImageView.image = selectedImage
-            actionButton.setTitle("Update Card", for: .normal)
+            actionButton.setTitle("Update Card".localized, for: .normal)
 //            let deleteBarButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(handleDelete))
 //            self.navigationItem.rightBarButtonItem = deleteBarButton
         }else {
-            actionButton.setTitle("Add Card", for: .normal)
+            actionButton.setTitle("Add Card".localized, for: .normal)
+            self.navigationItem.rightBarButtonItem = nil
             startDateLabel.text = Date().convertDateToString()
             endDateLabel.text = Date().convertDateToString()
 //            self.navigationItem.rightBarButtonItem = nil

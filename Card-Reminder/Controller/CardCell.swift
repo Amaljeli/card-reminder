@@ -23,14 +23,14 @@ class CardCell: UITableViewCell {
     
     {
     didSet {
-        startDatelabel.text = "Start Date".localized
+        startDatelabel.text = "StartDate".localized
     }
 }
 
     @IBOutlet weak var endDatelabel: UILabel!
     {
     didSet {
-        endDatelabel.text = "End Date".localized
+        endDatelabel.text = "EndDate".localized
     }
 }
     @IBOutlet weak var expireLabel: UILabel!
@@ -78,8 +78,7 @@ class CardCell: UITableViewCell {
         let difference = Calendar.current.dateComponents(component, from: currentDate, to: date)
         var differenceString = ""
         if difference.year != 0 {
-            differenceString += " year: \(difference.year ?? 0)"
-        }
+            differenceString += " year.: \(difference.year ?? 0)"        }
         
         if difference.month != 0 {
             differenceString += " month: \(difference.month ?? 0)"
