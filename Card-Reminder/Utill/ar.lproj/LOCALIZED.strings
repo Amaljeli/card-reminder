@@ -1,12 +1,12 @@
 
 "SignIn" = "تسجيل الدخول";
 "SignUp" = "انشاء حساب";
-"LetsGetStarted! " = "هيا بنا نبدأ";
+"LetsGetStarted!" = "هيا بنا نبدأ";
 "CreateAnAccount!" = "إنشاء حساب";
 "Name" = "الأسم";
 "Email" = "البريد الالكتروني";
-"Password" = ";كلمة المرور";
-"confirmPassword" = "تأكيد كلمة المرور";
+"Password" = "كلمة المرور";
+"confirm password" = "تأكيد كلمة المرور";
 //"SignUp" = "انشاء حساب";
 "HelloWelcomeBackToAccount!" = "مرحباً ، اهلاً بك في حسابك ";
 "Email" = "البريد الإلكتروني";

@@ -13,7 +13,7 @@
 "Name" = "Name";
 "Email" = "Email";
 "Password" = "Password";
-"confirmPassword" = "Password";
+"confirm password" = "confirmPassword";
 "SignUp" = "SignUp";
 
 "HelloWelcomeBackToAccount!" = "Hello, welcome back to account!";
@@ -43,5 +43,5 @@
     "Passpot" = "Passpot";
 "Driving license" = "Driving license";
 "Id Card" = "Id Card";
-"Other Card" = "Id Card";
+"Other Card" = "Other Card";
 "year" = "year";

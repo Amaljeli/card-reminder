@@ -72,7 +72,6 @@ class SignUpViewController: UIViewController {
     
     
     @IBOutlet weak var NameTextField: UITextField!
-    
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!{
         didSet{
