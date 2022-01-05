@@ -59,7 +59,7 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var userImageView: UIImageView!{
         didSet {
-            userImageView.layer.borderColor = UIColor.systemGreen.cgColor
+            userImageView.layer.borderColor = UIColor.systemGray.cgColor
             userImageView.layer.borderWidth = 3.0
             userImageView.layer.cornerRadius = userImageView.bounds.height / 2
             userImageView.layer.masksToBounds = true
@@ -106,8 +106,8 @@ class SignUpViewController: UIViewController {
             }
         
     @IBAction func eyePasswordConferm(_ sender: AnyObject) {
-        PasswordTextField.isSecureTextEntry.toggle()
-                if  PasswordTextField.isSecureTextEntry {
+ConfirTextField.isSecureTextEntry.toggle()
+                if  ConfirTextField.isSecureTextEntry {
                     if let image = UIImage(systemName: "eye.fill") {
                         sender.setImage(image, for: .normal)
                     }

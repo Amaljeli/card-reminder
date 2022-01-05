@@ -10,6 +10,7 @@ import UIKit
 class CardCell: UITableViewCell {
 
     @IBOutlet weak var CardImageView: UIImageView!
+     
     @IBOutlet weak var nuStartDateLabel: UILabel!
     @IBOutlet weak var nuEndDateLabel: UILabel!
     @IBOutlet weak var taypeLabel: UILabel!
@@ -18,6 +19,8 @@ class CardCell: UITableViewCell {
     @IBOutlet weak var TaypeLabelCell: UILabel!
     
     @IBOutlet weak var expireDaysLabel: UILabel!
+    
+    
     
     @IBOutlet weak var startDatelabel: UILabel!
     
@@ -78,7 +81,7 @@ class CardCell: UITableViewCell {
         let difference = Calendar.current.dateComponents(component, from: currentDate, to: date)
         var differenceString = ""
         if difference.year != 0 {
-            differenceString += " year.: \(difference.year ?? 0)"        }
+            differenceString += " year: \(difference.year ?? 0)"        }
         
         if difference.month != 0 {
             differenceString += " month: \(difference.month ?? 0)"

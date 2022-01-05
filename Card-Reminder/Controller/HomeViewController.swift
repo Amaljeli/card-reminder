@@ -18,7 +18,18 @@ class HomeViewController: UIViewController {
         }
     }
     
+   
     
+    
+    @IBOutlet weak var imageUser: UIImageView!{
+    didSet{
+imageUser.layer.borderColor = UIColor.systemGray.cgColor
+        imageUser.layer.borderWidth = 3.0
+        imageUser.layer.cornerRadius = imageUser.bounds.height / 2
+        imageUser.layer.masksToBounds = true
+        imageUser.isUserInteractionEnabled = true
+    }
+}
     @IBOutlet weak var cardTableView: UITableView!{
         
     didSet {

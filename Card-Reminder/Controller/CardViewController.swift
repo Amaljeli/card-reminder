@@ -10,7 +10,14 @@ import Firebase
 class CardViewController: UIViewController {
     var selectedCard:Card?
     var selectedCradImage:UIImage?
+    
     @IBOutlet weak var actionButton: UIButton!
+//    {
+//        didSet{
+//            actionButton.setTitle("Add Card".localized, for: .normal)
+//        }
+//    }
+    
     @IBOutlet weak var cardImageView: UIImageView!{
         didSet {
             cardImageView.isUserInteractionEnabled = true
@@ -33,13 +40,13 @@ class CardViewController: UIViewController {
     }
 }
     
-    @IBOutlet weak var addLabel: UIButton!
-    
-    {
-        didSet{
-            addLabel.setTitle("Add".localized, for: .normal)
-        }
-    }
+//    @IBOutlet weak var addLabel: UIButton!
+//
+//    {
+//        didSet{
+//            addLabel.setTitle("Add Card".localized, for: .normal)
+//        }
+//    }
     
     
     
@@ -100,7 +107,7 @@ class CardViewController: UIViewController {
 //            self.navigationItem.rightBarButtonItem = deleteBarButton
         }else {
             actionButton.setTitle("Add Card".localized, for: .normal)
-            self.navigationItem.rightBarButtonItem = nil
+//            self.navigationItem.rightBarButtonItem = nil
             startDateLabel.text = Date().convertDateToString()
             endDateLabel.text = Date().convertDateToString()
 //            self.navigationItem.rightBarButtonItem = nil

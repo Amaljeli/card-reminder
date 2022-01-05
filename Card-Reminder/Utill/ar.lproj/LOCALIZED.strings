@@ -29,7 +29,10 @@
 "14-02-2022" = "٢٠٢٢/٢/١٤";
     "Passpot" = "جواز السفر";
 "Driving license" = "رخصة القيادة";
-"Id Card" = "البطاقة الشخصية";
+"Id Card" = "الهوية الوطنية";
 "Other Card" = "بطاقة اخرى";
 "year" = "سنه";
-
+"Please Enter your name" = "من فضلك ادخل اسمك";
+"Please Enter your Email" = "من فضلك ادخل البريد الالكتروني";
+"Please Enter password" = "من فضلك ادخل الرمز السري";
+"Confirm password" = "التحقق من الرمز السري";
