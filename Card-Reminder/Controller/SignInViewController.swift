@@ -47,7 +47,9 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let backButton = UIBarButtonItem()
+         backButton.title = ""
+         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         // Do any additional setup after loading the view.
     }
     

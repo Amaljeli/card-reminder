@@ -11,7 +11,7 @@ import UIKit
 class DetailsViewController: UIViewController {
     var selectedCard:Card?
     var selectedCardImage:UIImage?
-
+//    var selecedUser:UIImage?
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var startDateLabel: UILabel!
 

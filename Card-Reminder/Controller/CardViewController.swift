@@ -10,7 +10,7 @@ import Firebase
 class CardViewController: UIViewController {
     var selectedCard:Card?
     var selectedCradImage:UIImage?
-    
+//    var selecedUser:UIImage?
     @IBOutlet weak var actionButton: UIButton!
 //    {
 //        didSet{
@@ -69,7 +69,9 @@ class CardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let backButton = UIBarButtonItem()
+         backButton.title = ""
+         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
 //        print(type,"?????")
 //        __________________________________________________

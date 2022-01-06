@@ -7,13 +7,13 @@
 */
 
 "SignIn" = "Sign in";
-"SignUp" = "SignUp";
+"SignUp" = "Sign Up";
 "LetsGetStarted!" = "Let's Get Started!";
 "CreateAnAccount!" = "Create an account!";
 "Name" = "Name";
 "Email" = "Email";
 "Password" = "Password";
-"confirm password" = "confirmPassword";
+"confirm password" = "confirm Password";
 "SignUp" = "SignUp";
 
 "HelloWelcomeBackToAccount!" = "Hello, welcome back to account!";

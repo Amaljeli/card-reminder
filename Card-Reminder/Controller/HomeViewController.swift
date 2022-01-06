@@ -8,7 +8,11 @@
 import UIKit
 import Firebase
 class HomeViewController: UIViewController {
+    var selectedCard:UIImage?
+//    var selecedUser:UIImage?
+//    var selectedUserImage:UIImage?
     var cards = [Card](){
+        
 //    var selectedCard:Card?
 //    var selectedCardImage:UIImage?
     
@@ -62,15 +66,18 @@ getCards()
                         ref.collection("users").document(Auth.auth().currentUser!.uid).getDocument { userSnapshot, error in
                                  if let error = error {
                                      print("ERROR user Data",error.localizedDescription)
+                                     print ("sss")
                                  }
                                  if let userSnapshot = userSnapshot,
                                     let userData = userSnapshot.data(){
                                      let user = User(dict:userData)
-                                     print("+++\(user)+++")
+                                     print("+++\(user.name)+++")
                                      self.userNameLable.text = user.name
+                                     self.imageUser.loadImageUsingCache(with: user.imageUrl)
+                                     
 //                                     self.userEmailLable.text = user.email
 //                                     self.userPhoneLable.text = "\(user.phoneNumber)"
-                                    // self.userImageProfile.loadImageUsingCache(with: customer?.imageUrl)
+//                                     self.userImageProfile.loadImageUsingCache(with: customer?.imageUrl)
                                  }
                         }
     }
@@ -257,9 +264,15 @@ extension HomeViewController: UITableViewDelegate {
         vc.selectedCard = cards[indexPath.row]
             vc.selectedCradImage = cell.CardImageView.image
             navigationController?.pushViewController(vc, animated: true)
+//            vc.selecedUser = selecedUser
+//            
+//            vc. = cards[indexPath.row]
+//                vc.selectedCradImage = cell.CardImageView.image
+//                navigationController?.pushViewController(vc, animated: true)
+            
         }
         
-        
+//
 //        if let currentUser = Auth.auth().currentUser,
 //           currentUser.uid == cards[indexPath.row].userId{
 //

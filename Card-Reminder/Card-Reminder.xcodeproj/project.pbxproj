@@ -58,6 +58,9 @@
 		1E5299172774AF560078CA41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E52991A2774AF560078CA41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E52991C2774AF560078CA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E57F1C6278603F100B37E4A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		1E57F1C7278603F100B37E4A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1E57F1C82786166900B37E4A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LOCALIZED.strings; sourceTree = "<group>"; };
 		1EEA4BD02781BD3B00B600BB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		1EEA4BD12781BD3B00B600BB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1EEFD0BA2779D8A600C7BD35 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
@@ -208,6 +211,7 @@
 				en,
 				Base,
 				ar,
+				fr,
 			);
 			mainGroup = 1E5299022774AF520078CA41;
 			packageReferences = (
@@ -271,6 +275,7 @@
 			children = (
 				1E3518542781C1B3003C863D /* en */,
 				1E3518562781C1B9003C863D /* ar */,
+				1E57F1C82786166900B37E4A /* fr */,
 			);
 			name = LOCALIZED.strings;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 			children = (
 				1E5299152774AF520078CA41 /* Base */,
 				1EEA4BD02781BD3B00B600BB /* ar */,
+				1E57F1C6278603F100B37E4A /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 				1E52991A2774AF560078CA41 /* Base */,
 				1EEA4BD12781BD3B00B600BB /* ar */,
 				1E3518502781BE4B003C863D /* en */,
+				1E57F1C7278603F100B37E4A /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

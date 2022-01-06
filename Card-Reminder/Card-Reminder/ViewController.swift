@@ -31,45 +31,78 @@ class ViewController: UIViewController {
         }
     }
     @IBOutlet weak var languageSegmentControl: UISegmentedControl!{
-        didSet {
-        if let lang = UserDefaults.standard.string(forKey: "currentLanguage") {
-            switch lang {
-            case "ar":
-                languageSegmentControl.selectedSegmentIndex = 0
-            case "en":
-                languageSegmentControl.selectedSegmentIndex = 1
-            default:
-                let localLang =  Locale.current.languageCode
-                 if localLang == "en" {
-                     languageSegmentControl.selectedSegmentIndex = 1
-                 
-                 }else {
-                     languageSegmentControl.selectedSegmentIndex = 0
-                 }
-              
-            }
-        
-        }else {
-            let localLang =  Locale.current.languageCode
-            UserDefaults.standard.setValue([localLang], forKey: "AppleLanaguge")
-             if localLang == "en" {
-                 languageSegmentControl.selectedSegmentIndex = 1
-                 
-             }else {
-                 
-                 languageSegmentControl.selectedSegmentIndex = 0
-//             } else if localLang == "Franch"{
-//                 languageSegmentControl.selectedSegmentIndex = 2
-//             }else {
+//        didSet {
+//        if let lang = UserDefaults.standard.string(forKey: "currentLanguage") {
+//            switch lang {
+//            case "ar":
+//                languageSegmentControl.selectedSegmentIndex = 0
+//            case "en":
+//                languageSegmentControl.selectedSegmentIndex = 1
+//            default:
+//                let localLang =  Locale.current.languageCode
+//                 if localLang == "en" {
+//                     languageSegmentControl.selectedSegmentIndex = 1
+//
+//                 }else {
+//                     languageSegmentControl.selectedSegmentIndex = 0
+//                 }
+//
+//            }
+//
+//        }else {
+//            let localLang =  Locale.current.languageCode
+//            UserDefaults.standard.setValue([localLang], forKey: "AppleLanaguge")
+//             if localLang == "en" {
 //                 languageSegmentControl.selectedSegmentIndex = 1
-             }
-        }
-    }
-    }
-        override func viewDidLoad() {
-            super.viewDidLoad()
+//
+//             }else {
+//
+//                 languageSegmentControl.selectedSegmentIndex = 0
+////
+//             }
+//        }
+//    }
+        didSet {
+            if let lang = UserDefaults.standard.string(forKey: "currentLanguage") {
+                switch lang {
+                case "ar":
+                    languageSegmentControl.selectedSegmentIndex = 0
+                case "en":
+                    languageSegmentControl.selectedSegmentIndex = 1
+                case "fr":
+                    languageSegmentControl.selectedSegmentIndex = 2
+                default:
+                    let localLang =  Locale.current.languageCode
+                     if localLang == "ar" {
+                         languageSegmentControl.selectedSegmentIndex = 0
+                     } else if localLang == "fr"{
+                         languageSegmentControl.selectedSegmentIndex = 2
+                     }else {
+                         languageSegmentControl.selectedSegmentIndex = 1
+                     }
+                  
+                }
             
-        
+            }else {
+                let localLang =  Locale.current.languageCode
+                 if localLang == "ar" {
+                     languageSegmentControl.selectedSegmentIndex = 0
+                 } else if localLang == "fr"{
+                     languageSegmentControl.selectedSegmentIndex = 2
+                 }else {
+                     languageSegmentControl.selectedSegmentIndex = 1
+                 }
+            }
+        }
+    
+    
+    }
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
 
