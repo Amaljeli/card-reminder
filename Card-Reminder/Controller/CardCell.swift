@@ -8,12 +8,45 @@
 import UIKit
 
 class CardCell: UITableViewCell {
+    
 
     @IBOutlet weak var CardImageView: UIImageView!
      
     @IBOutlet weak var nuStartDateLabel: UILabel!
     @IBOutlet weak var nuEndDateLabel: UILabel!
     @IBOutlet weak var taypeLabel: UILabel!
+//
+
+    @IBAction func linkIdCard(_ sender: Any) {
+        
+        switch taypeLabel.text{
+        case "Id Card".localized :
+            UIApplication.shared.open(URL(string: "https://www.absher.sa/portal/landing.html")! as URL, options: [:], completionHandler: nil )
+            
+        case "Passpot".localized:
+            UIApplication.shared.open(URL(string: "https://www.moi.gov.sa/wps/portal/Home/sectors/passports/contents/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDTxNTDwMTYy8LUwC3AwcA428nB2dPY0s3M30gxOL9L30o_ArApqSmVVYGOWoH5Wcn1eSWlGiH1GQWFxckF9UUqxqAGcqJBapGuQmZuapGoDUJSaXKJQW6xdku4cDAMzsgY4!/")! as URL, options: [:], completionHandler: nil )
+        case "Driving license".localized:
+            UIApplication.shared.open(URL(string: "https://dallahdrivingschool.sa")! as URL, options: [:], completionHandler: nil )
+            
+        case "Al Rajhi Bank".localized:
+            UIApplication.shared.open(URL(string: "https://www.alrajhibank.com.sa")! as URL, options: [:], completionHandler: nil )
+        case "Al Ahli Bank".localized:
+            UIApplication.shared.open(URL(string: "https://www.moi.gov.sa/wps/portal/Home/sectors/passports/contents/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDTxNTDwMTYy8LUwC3AwcA428nB2dPY0s3M30gxOL9L30o_ArApqSmVVYGOWoH5Wcn1eSWlGiH1GQWFxckF9UUqxqAGcqJBapGuQmZuapGoDUJSaXKJQW6xdku4cDAMzsgY4!/")! as URL, options: [:], completionHandler: nil )
+        case "Al Enma Bank".localized:
+            UIApplication.shared.open(URL(string: "https://www.alinma.com/wps/portal/alinma")! as URL, options: [:], completionHandler: nil )
+        case "Al Blad Bank".localized:
+            UIApplication.shared.open(URL(string: "https://www.bankalbilad.com/ar/personal/Pages/home.aspx")! as URL, options: [:], completionHandler: nil )
+        case "Al Arabi Bank".localized:
+            UIApplication.shared.open(URL(string: "https://onlinebanking.anb.com.sa/RetailBank/app/logon.jsp?englang=en_AR")! as URL, options: [:], completionHandler: nil )
+        case "samba Bank ".localized:
+            UIApplication.shared.open(URL(string: "https://www.samba.com/ar/personal-banking/index.aspx")! as URL, options: [:], completionHandler: nil )
+            
+        default:
+            print("error")
+        }
+        }
+
+    
     @IBOutlet weak var remainingPeriodLabel: UILabel!
     @IBOutlet weak var remainingPeriodLabelImage: UIImageView!
     @IBOutlet weak var TaypeLabelCell: UILabel!

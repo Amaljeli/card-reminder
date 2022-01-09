@@ -10,6 +10,7 @@ import Firebase
 class CardViewController: UIViewController {
     var selectedCard:Card?
     var selectedCradImage:UIImage?
+   
 //    var selecedUser:UIImage?
     @IBOutlet weak var actionButton: UIButton!
 //    {
@@ -63,9 +64,12 @@ class CardViewController: UIViewController {
     
     @IBOutlet weak var TypePickerView: UIPickerView!
     let activityIndicator = UIActivityIndicatorView()
-    var arrayOfTaype = ["Card Bank".localized,"Passpot".localized,"Driving license".localized,"Id Card".localized,"Other Card".localized]
-    var selectedType = "Card Bank"
+    var arrayOfTaype = ["Id Card".localized,"Passpot".localized,"Driving license".localized,"Al Rajhi Bank".localized,"Al Ahli Bank".localized,"Al Enma Bank".localized,"Al Blad Bank".localized,"Al Arabi Bank".localized,"samba Bank".localized,"Other Card" .localized]
+    
+    var selectedType = "Id Card"
  
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -167,6 +171,8 @@ class CardViewController: UIViewController {
 //        }
 //
 //}
+    
+    
     @IBAction func handleActionTouch(_ sender: Any) {
 //
         if let image = cardImageView.image,
@@ -240,6 +246,9 @@ class CardViewController: UIViewController {
         }
         
     }
+    
+    
+    
 }
 
 
@@ -260,7 +269,6 @@ extension CardViewController:UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedType = arrayOfTaype[row]
         
-
         
 //        ابغى هنا اربط من ليبل اللي ف صفحه الديتيلز
 //        pickerLabel.text = ("\(Taype)")
@@ -269,6 +277,7 @@ extension CardViewController:UIPickerViewDelegate, UIPickerViewDataSource {
 //      type = arrayOfTaype[row]
         return arrayOfTaype[row]
     }
+ 
     }
     
 
@@ -310,6 +319,8 @@ extension CardViewController: UIImagePickerControllerDelegate, UINavigationContr
     }
     
 }
+
+
 extension Date {
     
     func convertDateToString() -> String {
