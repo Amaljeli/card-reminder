@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Card Remainder-3.png",
+      "filename" : "1-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,6 +12,7 @@
           "value" : "dark"
         }
       ],
+      "filename" : "1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -26,7 +27,6 @@
           "value" : "dark"
         }
       ],
-      "filename" : "1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

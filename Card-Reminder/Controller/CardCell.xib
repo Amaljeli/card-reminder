@@ -12,92 +12,119 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="424" id="KGk-i7-Jjw" customClass="CardCell" customModule="Card_Reminder" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="424"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="340" id="D5k-RN-WbS" customClass="CardCell" customModule="Card_Reminder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="CardCell" customModule="Card_Reminder" customModuleProvider="target">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="424"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D5k-RN-WbS" id="ZoL-aF-gYN">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 1443-06-01 at 1.36.50 PM" translatesAutoresizingMaskIntoConstraints="NO" id="KSS-J4-B8j">
-                        <rect key="frame" x="68" y="19" width="168" height="86"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 1443-06-01 at 1.36.50 PM" translatesAutoresizingMaskIntoConstraints="NO" id="KsB-tL-APr">
+                        <rect key="frame" x="110" y="10" width="100" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="MUa-Qd-OOs"/>
+                            <constraint firstAttribute="height" constant="60" id="n99-fE-nfR"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="14-02-2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcz-le-8kx">
-                        <rect key="frame" x="16" y="202" width="151" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qYi-no-7Gc">
+                        <rect key="frame" x="20" y="125.5" width="264" height="187"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NTg-Cb-TDY">
+                                <rect key="frame" x="0.0" y="0.0" width="264" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbP-83-720">
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14-02-2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PO-W3-q1f">
+                                        <rect key="frame" x="0.0" y="28.5" width="264" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iPK-c7-rCg">
+                                <rect key="frame" x="0.0" y="69" width="264" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixf-3A-sGU">
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14-02-2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-Uy-m1U">
+                                        <rect key="frame" x="0.0" y="28.5" width="264" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="txt-fo-wgp">
+                                <rect key="frame" x="0.0" y="138" width="264" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufv-xh-vau">
+                                        <rect key="frame" x="0.0" y="0.0" width="47" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nye-ND-NC4">
+                                        <rect key="frame" x="0.0" y="28.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Bank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWl-ow-qGb">
+                        <rect key="frame" x="26" y="85" width="268" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="14-02-2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgQ-w8-vPm">
-                        <rect key="frame" x="16" y="272" width="151" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Card Bank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eym-K7-bf0">
-                        <rect key="frame" x="59" y="127" width="164" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQ6-sj-4VG">
-                        <rect key="frame" x="16" y="243" width="151" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p1-1W-90v">
-                        <rect key="frame" x="16" y="341" width="282" height="43"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNu-9F-3YK">
-                        <rect key="frame" x="16" y="325" width="105" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTS-2g-GFy">
-                        <rect key="frame" x="16" y="173" width="151" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4E-aX-qpQ">
-                        <rect key="frame" x="231" y="135" width="88" height="22"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgu-9f-7oe">
+                        <rect key="frame" x="232" y="85" width="88" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="link" image="link" catalog="system">
                             <color key="titleColor" systemColor="labelColor"/>
                         </state>
                         <connections>
-                            <action selector="linkIdCard:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="p9o-GP-pDl"/>
+                            <action selector="linkIdCard:" destination="D5k-RN-WbS" eventType="touchUpInside" id="N2V-9z-r71"/>
                         </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" name="Color"/>
+                <constraints>
+                    <constraint firstItem="KsB-tL-APr" firstAttribute="top" secondItem="ZoL-aF-gYN" secondAttribute="top" constant="10" id="9jX-6Q-q4V"/>
+                    <constraint firstItem="KsB-tL-APr" firstAttribute="centerX" secondItem="ZoL-aF-gYN" secondAttribute="centerX" id="9v7-N5-aJ8"/>
+                    <constraint firstItem="UWl-ow-qGb" firstAttribute="top" secondItem="KsB-tL-APr" secondAttribute="bottom" constant="15" id="J3r-RO-jjv"/>
+                    <constraint firstItem="qYi-no-7Gc" firstAttribute="leading" secondItem="ZoL-aF-gYN" secondAttribute="leading" constant="20" id="RkL-a6-zgc"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="qYi-no-7Gc" secondAttribute="trailing" constant="20" id="UwE-5H-lQ5"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="qYi-no-7Gc" secondAttribute="bottom" constant="16.5" id="dzE-Mj-RH0"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="UWl-ow-qGb" secondAttribute="trailing" constant="10" id="soq-9D-06K"/>
+                    <constraint firstItem="UWl-ow-qGb" firstAttribute="leading" secondItem="ZoL-aF-gYN" secondAttribute="leadingMargin" constant="10" id="ttN-JM-rZG"/>
+                    <constraint firstItem="qYi-no-7Gc" firstAttribute="top" secondItem="UWl-ow-qGb" secondAttribute="bottom" constant="20" id="xAu-z0-TGI"/>
+                </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <viewLayoutGuide key="safeArea" id="AxD-4E-9Ps"/>
             <connections>
-                <outlet property="CardImageView" destination="KSS-J4-B8j" id="0qP-Re-Uf4"/>
-                <outlet property="endDatelabel" destination="BQ6-sj-4VG" id="xEG-xG-Wit"/>
-                <outlet property="expireDaysLabel" destination="0p1-1W-90v" id="9fn-PB-qXd"/>
-                <outlet property="expireLabel" destination="NNu-9F-3YK" id="PcE-Xf-TTy"/>
-                <outlet property="nuEndDateLabel" destination="IgQ-w8-vPm" id="7w1-fZ-6Fk"/>
-                <outlet property="nuStartDateLabel" destination="Wcz-le-8kx" id="MzH-MF-oRg"/>
-                <outlet property="startDatelabel" destination="xTS-2g-GFy" id="OKt-Kj-POa"/>
-                <outlet property="taypeLabel" destination="eym-K7-bf0" id="Mgz-G6-eTL"/>
+                <outlet property="CardImageView" destination="KsB-tL-APr" id="Dc9-no-v4N"/>
+                <outlet property="endDatelabel" destination="ixf-3A-sGU" id="i0U-Vg-twq"/>
+                <outlet property="expireDaysLabel" destination="Nye-ND-NC4" id="Zae-CN-g9g"/>
+                <outlet property="expireLabel" destination="ufv-xh-vau" id="C8D-jS-qvz"/>
+                <outlet property="nuEndDateLabel" destination="Rmb-Uy-m1U" id="kHH-Wf-Xmr"/>
+                <outlet property="nuStartDateLabel" destination="5PO-W3-q1f" id="2JJ-Yr-wup"/>
+                <outlet property="startDatelabel" destination="LbP-83-720" id="b2S-wu-QvA"/>
+                <outlet property="taypeLabel" destination="UWl-ow-qGb" id="XVv-Pd-mtH"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="107.8125"/>
+            <point key="canvasLocation" x="131.8840579710145" y="79.6875"/>
         </tableViewCell>
     </objects>
     <resources>

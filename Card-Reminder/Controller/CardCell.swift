@@ -31,7 +31,7 @@ class CardCell: UITableViewCell {
         case "Al Rajhi Bank".localized:
             UIApplication.shared.open(URL(string: "https://www.alrajhibank.com.sa")! as URL, options: [:], completionHandler: nil )
         case "Al Ahli Bank".localized:
-            UIApplication.shared.open(URL(string: "https://www.moi.gov.sa/wps/portal/Home/sectors/passports/contents/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDTxNTDwMTYy8LUwC3AwcA428nB2dPY0s3M30gxOL9L30o_ArApqSmVVYGOWoH5Wcn1eSWlGiH1GQWFxckF9UUqxqAGcqJBapGuQmZuapGoDUJSaXKJQW6xdku4cDAMzsgY4!/")! as URL, options: [:], completionHandler: nil )
+            UIApplication.shared.open(URL(string: "https://www.alahlitadawul.com/GTrade/trading?47a4908f%3A17e45e69ab8%3A-1444")! as URL, options: [:], completionHandler: nil )
         case "Al Enma Bank".localized:
             UIApplication.shared.open(URL(string: "https://www.alinma.com/wps/portal/alinma")! as URL, options: [:], completionHandler: nil )
         case "Al Blad Bank".localized:
