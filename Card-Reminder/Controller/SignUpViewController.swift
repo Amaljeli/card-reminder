@@ -47,10 +47,10 @@ class SignUpViewController: UIViewController {
         confirmPasswordLabel.text = "confirm password".localized
     }
 }
-    @IBOutlet weak var SignUpLabel: UIButton!
+    @IBOutlet weak var SignUpButton: UIButton!
     {
         didSet{
-            SignUpLabel.setTitle("SignUp".localized, for: .normal)
+            SignUpButton.setTitle("SignUp".localized, for: .normal)
         }
     }
     
@@ -71,23 +71,28 @@ class SignUpViewController: UIViewController {
     
     
     
-    @IBOutlet weak var NameTextField: UITextField!
-    @IBOutlet weak var EmailTextField: UITextField!
-    @IBOutlet weak var PasswordTextField: UITextField!{
+    @IBOutlet weak var nameTextField: UITextField! {
+        didSet {
+            nameTextField.placeholder = "Plea".localized
+        }
+    }
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!{
         didSet{
-            PasswordTextField.isSecureTextEntry = true
+            passwordTextField.isSecureTextEntry = true
         }
     }
     
-    @IBOutlet weak var ConfirTextField: UITextField!{
+    @IBOutlet weak var confirmTextField: UITextField!{
         didSet{
-            ConfirTextField.isSecureTextEntry = true
+            confirmTextField.isSecureTextEntry = true
         }
 
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initalSteup()
         let backButton = UIBarButtonItem()
          backButton.title = ""
          self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
@@ -96,8 +101,8 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func eyePassword(_ sender: AnyObject) {
-        PasswordTextField.isSecureTextEntry.toggle()
-                if  PasswordTextField.isSecureTextEntry {
+        passwordTextField.isSecureTextEntry.toggle()
+                if  passwordTextField.isSecureTextEntry {
                     if let image = UIImage(systemName: "eye.fill") {
                         sender.setImage(image, for: .normal)
                     }
@@ -109,8 +114,8 @@ class SignUpViewController: UIViewController {
             }
         
     @IBAction func eyePasswordConferm(_ sender: AnyObject) {
-ConfirTextField.isSecureTextEntry.toggle()
-                if  ConfirTextField.isSecureTextEntry {
+confirmTextField.isSecureTextEntry.toggle()
+                if  confirmTextField.isSecureTextEntry {
                     if let image = UIImage(systemName: "eye.fill") {
                         sender.setImage(image, for: .normal)
                     }
@@ -124,25 +129,34 @@ ConfirTextField.isSecureTextEntry.toggle()
     @IBAction func handleSignUp(_ sender: Any) {
         if let image = userImageView.image,
            let imageData = image.jpegData(compressionQuality: 0.75),
-           let name = NameTextField.text,
-           let email = EmailTextField.text,
-           let password = PasswordTextField.text,
-           let confirPassword = ConfirTextField.text,
-           password == confirPassword {
+           let name = nameTextField.text,
+           let email = emailTextField.text,
+           let password = passwordTextField.text,
+           let confirmPassword = confirmTextField.text,
+           password == confirmPassword {
             Activity.showIndicator(parentView: self.view, childView: activityIndicator)
             Auth.auth().createUser(withEmail: email,password: password) { authResult, error in
+//
+//
                 if let error = error {
-                    print ("Registration Auth Error",error.localizedDescription)
-                    
-                }
+                                    Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+                                                                Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                    print("Registration Auth Error",error.localizedDescription)
+                                }
                 if let authResult = authResult {
                     let storageRef = Storage.storage().reference(withPath:"users/\(authResult.user.uid)")
                     let uploadMeta = StorageMetadata.init()
                     uploadMeta.contentType = "image/jpeg"
                     storageRef.putData(imageData, metadata: uploadMeta) { storageMeta, error in
+//                        if let error = error {
+//                            print("Registration Storage Error",error.localizedDescription)
+//
+//                        }
+                        
                         if let error = error {
-                            print("Registration Storage Error",error.localizedDescription)
-                            
+                            Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+                            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                            print("Registration Auth Error",error.localizedDescription)
                         }
                         storageRef.downloadURL { url, error in
                             if let error = error {
@@ -162,11 +176,16 @@ ConfirTextField.isSecureTextEntry.toggle()
                                     if let error = error {
                                         print("Registration Database error",error.localizedDescription)
                                     }else {
-                                        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
-                                            vc.modalPresentationStyle = .fullScreen
-                                            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
-                                            self.present(vc, animated: true, completion: nil)
+//
+//                                        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
+//                                            vc.modalPresentationStyle = .fullScreen
+//                                            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+////
+//                                            self.setRootViewController(vc: vc)
+                                        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
                                             
+                                            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                            self.setRootViewController(vc: vc)
                                         }
                                     }
                                 }
@@ -179,6 +198,47 @@ ConfirTextField.isSecureTextEntry.toggle()
                 }
             }
         }
+        
+    }
+//     -------------------- Keyboard properties ----------------
+        private func initalSteup(){
+
+            self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboarde)))
+
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        }
+        @objc private func hideKeyboarde(){
+            self.view.endEditing(true)
+        }
+
+        @objc private func keyboardWillShow(notification:NSNotification){
+
+            guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+               // if keyboard size is not available for some reason, dont do anything
+               return
+            }
+
+          // move the root view up by the distance of keyboard height
+    self.view.frame.origin.y = 100 - keyboardSize.height
+        }
+        @objc private func keyboardWillHide(){
+            self.view.frame.origin.y = 0
+        }
+        deinit{
+            NotificationCenter.default.removeObserver(self , name: UIResponder.keyboardWillShowNotification,object: nil)
+            NotificationCenter.default.removeObserver(self , name: UIResponder.keyboardWillHideNotification,object: nil)
+        }
+//
+
+    @IBAction func back (segue:UIStoryboardSegue){
+
+    }
+    
+    func setRootViewController(vc: UIViewController) {
+        let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.isNavigationBarHidden = true
+        UIApplication.shared.windows.first?.rootViewController = navigationController
     }
 }
 extension SignUpViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
@@ -218,5 +278,3 @@ extension SignUpViewController: UIImagePickerControllerDelegate,UINavigationCont
         picker.dismiss(animated: true, completion: nil)
     }
 }
-
-

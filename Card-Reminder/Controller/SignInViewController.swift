@@ -47,10 +47,15 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let backButton = UIBarButtonItem()
          backButton.title = ""
          self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         // Do any additional setup after loading the view.
+        
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+                        tap.cancelsTouchesInView = false
+                        view.addGestureRecognizer(tap)
     }
     
     @IBAction func handleSignIn(_ sender: Any) {
@@ -59,17 +64,31 @@ class SignInViewController: UIViewController {
 
             Activity.showIndicator(parentView: self.view, childView:  activityIndicator)
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                if let error = error {
+                                  Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+                                  Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                  print("Registration Auth Error",error.localizedDescription)
+                              }
+                
                 if let _ = authResult {
-                    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
+                    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
                         vc.modalPresentationStyle = .fullScreen
                         Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
-                        self.present(vc, animated: true, completion: nil)
+                        self.setRootViewController(vc: vc)
                     }
                 }
             }
         }
     }
 
+    @IBAction func backAction(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
     
+    func setRootViewController(vc: UIViewController) {
+        let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.isNavigationBarHidden = true
+        UIApplication.shared.windows.first?.rootViewController = navigationController
+    }
 }
 

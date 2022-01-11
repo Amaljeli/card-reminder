@@ -8,16 +8,14 @@
 import UIKit
 
 class CardCell: UITableViewCell {
-    
 
     @IBOutlet weak var CardImageView: UIImageView!
      
     @IBOutlet weak var nuStartDateLabel: UILabel!
     @IBOutlet weak var nuEndDateLabel: UILabel!
     @IBOutlet weak var taypeLabel: UILabel!
-//
-
-    @IBAction func linkIdCard(_ sender: Any) {
+    
+    @IBAction func renewCard(_ sender: Any) {
         
         switch taypeLabel.text{
         case "Id Card".localized :
@@ -38,7 +36,7 @@ class CardCell: UITableViewCell {
             UIApplication.shared.open(URL(string: "https://www.bankalbilad.com/ar/personal/Pages/home.aspx")! as URL, options: [:], completionHandler: nil )
         case "Al Arabi Bank".localized:
             UIApplication.shared.open(URL(string: "https://onlinebanking.anb.com.sa/RetailBank/app/logon.jsp?englang=en_AR")! as URL, options: [:], completionHandler: nil )
-        case "samba Bank ".localized:
+        case "samba Bank".localized:
             UIApplication.shared.open(URL(string: "https://www.samba.com/ar/personal-banking/index.aspx")! as URL, options: [:], completionHandler: nil )
             
         default:
@@ -46,6 +44,7 @@ class CardCell: UITableViewCell {
         }
         }
 
+    
     
     @IBOutlet weak var remainingPeriodLabel: UILabel!
     @IBOutlet weak var remainingPeriodLabelImage: UIImageView!

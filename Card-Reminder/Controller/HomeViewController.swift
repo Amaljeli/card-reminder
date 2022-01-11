@@ -171,7 +171,8 @@ getCards()
             try Auth.auth().signOut()
             if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "landingNavigationController") as? UINavigationController {
                 vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated:true, completion: nil)
+                UIApplication.shared.windows.first?.rootViewController = vc
+           //     self.present(vc, animated:true, completion: nil)
             }
         }catch {
             print ("ERROR in signout",error.localizedDescription)
@@ -185,6 +186,8 @@ getCards()
           navigationController?.pushViewController(vc, animated: true)
       }
           }
+
+
         
     
 }
@@ -217,7 +220,6 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell") as! CardCell
         return cell.configure(with: cards[indexPath.row])
-        
         
     }
     

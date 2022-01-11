@@ -27,6 +27,8 @@
 //"StartDate" = "Date de début";
 "ExpiryDate" = "Date d'expiration";
 "Add" = "Ajouter";
+//"StartDate" = "Date de fin";
+//"EndDate" = "Date de fin";
 "Al Rajhi Bank" =  "Banque Al Rajhi";
 "Al Ahli Bank" = "Banque Al Ahli";
 "Al Enma Bank" = "Banque Al Enma";
@@ -37,3 +39,4 @@
 "Driving license" = "Permis de conduire";
 "Id Card" = "Carte d'identité";
 "Other Card" = "Autre carte";
+"renwal" = "renouvellement";

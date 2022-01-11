@@ -10,14 +10,13 @@ import Firebase
 class CardViewController: UIViewController {
     var selectedCard:Card?
     var selectedCradImage:UIImage?
-   
-//    var selecedUser:UIImage?
+    //    var selecedUser:UIImage?
     @IBOutlet weak var actionButton: UIButton!
-//    {
-//        didSet{
-//            actionButton.setTitle("Add Card".localized, for: .normal)
-//        }
-//    }
+    //    {
+    //        didSet{
+    //            actionButton.setTitle("Add Card".localized, for: .normal)
+    //        }
+    //    }
     
     @IBOutlet weak var cardImageView: UIImageView!{
         didSet {
@@ -29,94 +28,92 @@ class CardViewController: UIViewController {
     
     @IBOutlet weak var deiStartDate: UILabel!
     {
-    didSet {
-        deiStartDate.text = "StartDate".localized
+        didSet {
+            deiStartDate.text = "StartDate".localized
+        }
     }
-}
     
     @IBOutlet weak var deiEndDate: UILabel!
     {
-    didSet {
-        deiEndDate.text = "ExpiryDate".localized
+        didSet {
+            deiEndDate.text = "ExpiryDate".localized
+        }
     }
-}
     
-//    @IBOutlet weak var addLabel: UIButton!
-//
-//    {
-//        didSet{
-//            addLabel.setTitle("Add Card".localized, for: .normal)
-//        }
-//    }
+    //    @IBOutlet weak var addLabel: UIButton!
+    //
+    //    {
+    //        didSet{
+    //            addLabel.setTitle("Add Card".localized, for: .normal)
+    //        }
+    //    }
     
     
     
     //    var type = ""
     @IBOutlet weak var endPicker: UIDatePicker!
     
-  
+    
     
     @IBOutlet weak var startDateLabel: UILabel!
     
     @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var startPiecker: UIDatePicker!
-  
+    
     
     @IBOutlet weak var TypePickerView: UIPickerView!
     let activityIndicator = UIActivityIndicatorView()
     var arrayOfTaype = ["Id Card".localized,"Passpot".localized,"Driving license".localized,"Al Rajhi Bank".localized,"Al Ahli Bank".localized,"Al Enma Bank".localized,"Al Blad Bank".localized,"Al Arabi Bank".localized,"samba Bank".localized,"Other Card" .localized]
     
     var selectedType = "Id Card"
- 
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let backButton = UIBarButtonItem()
-         backButton.title = ""
-         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        backButton.title = ""
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-//        print(type,"?????")
-//        __________________________________________________
-//        crateDatePicker()
-//        func crateDatePicker () {
-//            let toolbar = UIToolbar()
-//            toolbar.sizeToFit()
-//
-////            let doneBtn = UIBarButtonItem(barButtonSystemItem: .done , target: nil, action: #selector(donePressed))
-//            let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-//            toolbar.setItems([doneBtn], animated: true)
-//            startDateTextField.inputAccessoryView = toolbar
-//
-//            startDateTextField.inputView = datePicker
-//
-//        }
-//
-//        @objc func donePressed () {
-//
-//                }
-
-//        _____________________________________
-    
+        //        print(type,"?????")
+        //        __________________________________________________
+        //        crateDatePicker()
+        //        func crateDatePicker () {
+        //            let toolbar = UIToolbar()
+        //            toolbar.sizeToFit()
+        //
+        ////            let doneBtn = UIBarButtonItem(barButtonSystemItem: .done , target: nil, action: #selector(donePressed))
+        //            let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        //            toolbar.setItems([doneBtn], animated: true)
+        //            startDateTextField.inputAccessoryView = toolbar
+        //
+        //            startDateTextField.inputView = datePicker
+        //
+        //        }
+        //
+        //        @objc func donePressed () {
+        //
+        //                }
+        
+        //        _____________________________________
+        
         TypePickerView.delegate = self
         TypePickerView.dataSource = self
         
         if let selectedCard = selectedCard,
-        let selectedImage = selectedCradImage {
-//            startPiecker.date =  startPiecker
+           let selectedImage = selectedCradImage {
+//                        startPiecker.date =  startPiecker
             startDateLabel.text = selectedCard.startDate
             endDateLabel.text = selectedCard.ExpiryDate
             cardImageView.image = selectedImage
             actionButton.setTitle("Update Card".localized, for: .normal)
-//            let deleteBarButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(handleDelete))
-//            self.navigationItem.rightBarButtonItem = deleteBarButton
+            //            let deleteBarButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(handleDelete))
+            //            self.navigationItem.rightBarButtonItem = deleteBarButton
         }else {
             actionButton.setTitle("Add Card".localized, for: .normal)
-//            self.navigationItem.rightBarButtonItem = nil
+            //            self.navigationItem.rightBarButtonItem = nil
             startDateLabel.text = Date().convertDateToString()
             endDateLabel.text = Date().convertDateToString()
-//            self.navigationItem.rightBarButtonItem = nil
+            //            self.navigationItem.rightBarButtonItem = nil
             
         }
         // Do any additional setup after loading the view.
@@ -124,57 +121,59 @@ class CardViewController: UIViewController {
     @IBAction func satatDatePiecker(_ sender: UIDatePicker) {
         startDateLabel.text = sender.date.convertDateToString()
     }
-        
-//        let dateFormatter = DateFormatter()
-//                dateFormatter.dateFormat = "yyyy-MM-dd"
-//        startDateLabel.text = "\(dateFormatter.string(from: sender.date) )"
-        
+    
+    //        let dateFormatter = DateFormatter()
+    //                dateFormatter.dateFormat = "yyyy-MM-dd"
+    //        startDateLabel.text = "\(dateFormatter.string(from: sender.date) )"
+    
     
     
     @IBAction func endDatePiecker(_ sender: UIDatePicker) {
         endDateLabel.text = sender.date.convertDateToString()
     }
     
-        //        let dateFormatter = DateFormatter()
-//                dateFormatter.dateFormat = "yyyy-MM-dd"
-       
-        
-//        endDateLabel.text = "\(dateFormatter.string(from: sender.date) )"
-      
+    @IBAction func backAction(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    //        let dateFormatter = DateFormatter()
+    //                dateFormatter.dateFormat = "yyyy-MM-dd"
+    
+    
+    //        endDateLabel.text = "\(dateFormatter.string(from: sender.date) )"
     
     
     
     
     
     
-//    @objc func handleDelete (_ sender: UIBarButtonItem) {
-//        let ref = Firestore.firestore().collection("cards")
-//        if let selectedCard = selectedCard {
-//            Activity.showIndicator(parentView: self.view, childView: activityIndicator)
-//            ref.document(selectedCard.id).delete { error in
-//                if let error = error {
-//                    print("Error in db delete",error)
-//                }else {
-//                    let storageRef = Storage.storage().reference(withPath: "cards/\(selectedCard.userId)/\(selectedCard.id)")
-//
-//                    storageRef.delete { error in
-//                        if let error = error {
-//                            print("Error in storage delete",error)
-//                        } else {
-//                            self.activityIndicator.stopAnimating()
-//                            self.navigationController?.popViewController(animated: true)
-//                        }
-//                    }
-//
-//                }
-//            }
-//        }
-//
-//}
     
-    
+    //    @objc func handleDelete (_ sender: UIBarButtonItem) {
+    //        let ref = Firestore.firestore().collection("cards")
+    //        if let selectedCard = selectedCard {
+    //            Activity.showIndicator(parentView: self.view, childView: activityIndicator)
+    //            ref.document(selectedCard.id).delete { error in
+    //                if let error = error {
+    //                    print("Error in db delete",error)
+    //                }else {
+    //                    let storageRef = Storage.storage().reference(withPath: "cards/\(selectedCard.userId)/\(selectedCard.id)")
+    //
+    //                    storageRef.delete { error in
+    //                        if let error = error {
+    //                            print("Error in storage delete",error)
+    //                        } else {
+    //                            self.activityIndicator.stopAnimating()
+    //                            self.navigationController?.popViewController(animated: true)
+    //                        }
+    //                    }
+    //
+    //                }
+    //            }
+    //        }
+    //
+    //}
     @IBAction func handleActionTouch(_ sender: Any) {
-//
+        //
         if let image = cardImageView.image,
            let imageData = image.jpegData(compressionQuality: 0.5),
            let startDate = startDateLabel.text,
@@ -246,9 +245,6 @@ class CardViewController: UIViewController {
         }
         
     }
-    
-    
-    
 }
 
 
@@ -256,30 +252,30 @@ class CardViewController: UIViewController {
 extension CardViewController:UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return arrayOfTaype.count
-
+        
     }
     
     func numberOfComponents (in pickerView: UIPickerView) -> Int {
-            return 1
-         
-               }
+        return 1
         
-   
-//
+    }
+    
+    
+    //
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedType = arrayOfTaype[row]
         
         
-//        ابغى هنا اربط من ليبل اللي ف صفحه الديتيلز
-//        pickerLabel.text = ("\(Taype)")
+        
+        //        ابغى هنا اربط من ليبل اللي ف صفحه الديتيلز
+        //        pickerLabel.text = ("\(Taype)")
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//      type = arrayOfTaype[row]
+        //      type = arrayOfTaype[row]
         return arrayOfTaype[row]
     }
- 
-    }
-    
+}
+
 
 extension CardViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @objc func chooseImage() {
@@ -319,8 +315,6 @@ extension CardViewController: UIImagePickerControllerDelegate, UINavigationContr
     }
     
 }
-
-
 extension Date {
     
     func convertDateToString() -> String {

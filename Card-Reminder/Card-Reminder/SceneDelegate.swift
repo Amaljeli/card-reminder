@@ -11,12 +11,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let window = window {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let _ = Auth.auth().currentUser {
-                let navigationController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController") as! UINavigationController
+                let home = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
+                let navigationController = UINavigationController(rootViewController: home)
+                navigationController.isNavigationBarHidden = true
                 window.rootViewController = navigationController
                 window.makeKeyAndVisible()
             }
