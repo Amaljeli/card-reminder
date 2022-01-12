@@ -11,6 +11,8 @@ class SignUpViewController: UIViewController {
     let imagePickerController = UIImagePickerController ()
     var activityIndicator = UIActivityIndicatorView ()
     
+    @IBOutlet weak var eyeConPassword: UIButton!
+    @IBOutlet weak var eyePassword: UIButton!
     @IBOutlet weak var letsGetStarted: UILabel!{
         didSet {
     letsGetStarted.text = "LetsGetStarted!".localized
@@ -101,6 +103,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         initalSteup()
         let backButton = UIBarButtonItem()
          backButton.title = ""
@@ -108,33 +111,39 @@ class SignUpViewController: UIViewController {
         imagePickerController.delegate = self
         // Do any additional setup after loading the view.
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+        
+        passwordTextField.rightView = eyePassword
+        passwordTextField.rightViewMode = .whileEditing
+        
+        confirmTextField.rightView = eyeConPassword
+        confirmTextField.rightViewMode = .whileEditing
     }
     
-    @IBAction func eyePassword(_ sender: AnyObject) {
+    @IBAction func eyePas(_ sender: UIButton) {
         passwordTextField.isSecureTextEntry.toggle()
-                if  passwordTextField.isSecureTextEntry {
-                    if let image = UIImage(systemName: "eye.fill") {
-                        sender.setImage(image, for: .normal)
-                    }
-                } else {
-                    if let image = UIImage(systemName: "eye.slash.fill") {
-                        sender.setImage(image, for: .normal)
-                    }
-                }
+        if passwordTextField.isSecureTextEntry {
+            if let image = UIImage(systemName: "eye.fill") {
+                sender.setImage(image, for: .normal)
             }
-        
-    @IBAction func eyePasswordConferm(_ sender: AnyObject) {
-confirmTextField.isSecureTextEntry.toggle()
-                if  confirmTextField.isSecureTextEntry {
-                    if let image = UIImage(systemName: "eye.fill") {
-                        sender.setImage(image, for: .normal)
-                    }
-                } else {
-                    if let image = UIImage(systemName: "eye.slash.fill") {
-                        sender.setImage(image, for: .normal)
-                    }
-                }
+        } else {
+            if let image = UIImage(systemName: "eye.slash.fill"){
+                sender.setImage(image, for: .normal)
             }
+        }
+    }
+    
+    @IBAction func changePasswordVisibility(_ sender: UIButton) {
+        confirmTextField.isSecureTextEntry.toggle()
+        if confirmTextField.isSecureTextEntry {
+            if let image = UIImage(systemName: "eye.fill") {
+                sender.setImage(image, for: .normal)
+            }
+        } else {
+            if let image = UIImage(systemName: "eye.slash.fill"){
+                sender.setImage(image, for: .normal)
+            }
+        }
+    }
     
     @IBAction func handleSignUp(_ sender: Any) {
         if let image = userImageView.image,

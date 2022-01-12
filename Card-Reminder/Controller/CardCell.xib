@@ -19,51 +19,78 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 1443-06-01 at 1.36.50 PM" translatesAutoresizingMaskIntoConstraints="NO" id="KSS-J4-B8j">
-                        <rect key="frame" x="69" y="10" width="192" height="76"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="HzN-qe-dZb">
-                        <rect key="frame" x="121" y="76" width="79" height="20.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="sLU-QX-Qxg">
+                        <rect key="frame" x="25" y="37.5" width="270" height="265"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="E0N-m6-xyE">
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="208"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 1443-06-01 at 1.36.50 PM" translatesAutoresizingMaskIntoConstraints="NO" id="KSS-J4-B8j">
+                                        <rect key="frame" x="35" y="0.0" width="200" height="130"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="q5C-fW-fZp"/>
+                                            <constraint firstAttribute="height" constant="130" id="x75-k9-jNX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wjG-SC-guu">
+                                        <rect key="frame" x="98.5" y="158" width="73.5" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Bank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eym-K7-bf0">
+                                                <rect key="frame" x="0.0" y="0.0" width="73.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdv-pg-HLG">
+                                                <rect key="frame" x="0.0" y="29" width="73.5" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Renwal" image="link" catalog="system">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="renewCard:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="z5c-yO-nAP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Ngk-jE-6hs">
+                                <rect key="frame" x="0.0" y="235" width="270" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expire" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNu-9F-3YK">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="6R5-50-Lp1"/>
+                                            <constraint firstAttribute="height" constant="30" id="98X-HR-af7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelfewfewfewfgewfgerwgregddd" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p1-1W-90v">
+                                        <rect key="frame" x="50" y="-8" width="220" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="5VX-SB-cEA"/>
+                                            <constraint firstAttribute="height" constant="44" id="EBw-ne-Yta"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                     </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNu-9F-3YK">
-                        <rect key="frame" x="-19" y="183" width="127" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdv-pg-HLG">
-                        <rect key="frame" x="124" y="141" width="73" height="26"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="renwal" image="link" catalog="system">
-                            <color key="titleColor" systemColor="labelColor"/>
-                        </state>
-                        <connections>
-                            <action selector="renewCard:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="z5c-yO-nAP"/>
-                        </connections>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Card Bank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eym-K7-bf0">
-                        <rect key="frame" x="95" y="104" width="141" height="40"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p1-1W-90v">
-                        <rect key="frame" x="95" y="175" width="195" height="37"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" name="Color"/>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <constraints>
+                <constraint firstItem="sLU-QX-Qxg" firstAttribute="centerX" secondItem="njF-e1-oar" secondAttribute="centerX" id="EMn-jI-6oG"/>
+                <constraint firstItem="sLU-QX-Qxg" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="dxd-gQ-26l"/>
+            </constraints>
             <connections>
                 <outlet property="CardImageView" destination="KSS-J4-B8j" id="0qP-Re-Uf4"/>
                 <outlet property="expireDaysLabel" destination="0p1-1W-90v" id="9fn-PB-qXd"/>
