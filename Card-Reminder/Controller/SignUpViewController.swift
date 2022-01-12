@@ -47,8 +47,7 @@ class SignUpViewController: UIViewController {
         confirmPasswordLabel.text = "confirm password".localized
     }
 }
-    @IBOutlet weak var SignUpButton: UIButton!
-    {
+    @IBOutlet weak var SignUpButton: UIButton!{
         didSet{
             SignUpButton.setTitle("SignUp".localized, for: .normal)
         }
@@ -73,21 +72,31 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField! {
         didSet {
-            nameTextField.placeholder = "Plea".localized
+            nameTextField.placeholder = "Please Enter your name".localized
         }
     }
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField! {
+        didSet {
+            emailTextField.placeholder = "Please Enter your Email".localized
+        }
+    }
     @IBOutlet weak var passwordTextField: UITextField!{
-        didSet{
-            passwordTextField.isSecureTextEntry = true
+//        didSet{
+//            passwordTextField.isSecureTextEntry = true
+//        }
+        didSet {
+            passwordTextField.placeholder = "Please Enter your password".localized
         }
     }
     
     @IBOutlet weak var confirmTextField: UITextField!{
-        didSet{
-            confirmTextField.isSecureTextEntry = true
+//        didSet{
+//            confirmTextField.isSecureTextEntry = true
+//        }
+        didSet {
+            confirmTextField.placeholder = "Confirm password".localized
         }
-
+        
     }
     
     override func viewDidLoad() {
@@ -98,6 +107,7 @@ class SignUpViewController: UIViewController {
          self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         imagePickerController.delegate = self
         // Do any additional setup after loading the view.
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
     }
     
     @IBAction func eyePassword(_ sender: AnyObject) {

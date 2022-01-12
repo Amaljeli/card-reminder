@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var cardReminderLabel: UILabel!
     {
     didSet {
-        cardReminderLabel.text = "CardReminder".localized
+        cardReminderLabel.text = "Card Reminder".localized
     }
 }
     @IBOutlet weak var signInLabel: UIButton! {

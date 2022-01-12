@@ -9,8 +9,16 @@ import UIKit
 import Firebase
 class SignInViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView ()
-    @IBOutlet weak var EmailTaxtField: UITextField!
-    @IBOutlet weak var PasswordTextField: UITextField!
+    @IBOutlet weak var EmailTaxtField: UITextField!{
+    didSet {
+        EmailTaxtField.placeholder = "Please Enter your Email".localized
+    }
+    }
+    @IBOutlet weak var PasswordTextField: UITextField!{
+    didSet {
+        PasswordTextField.placeholder = "Please Enter your password".localized
+    }
+    }
     @IBOutlet weak var helloLabel: UILabel!
     
     {
@@ -56,6 +64,7 @@ class SignInViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
                         tap.cancelsTouchesInView = false
                         view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
     }
     
     @IBAction func handleSignIn(_ sender: Any) {

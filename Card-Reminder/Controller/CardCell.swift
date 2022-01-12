@@ -46,28 +46,28 @@ class CardCell: UITableViewCell {
 
     
     
-    @IBOutlet weak var remainingPeriodLabel: UILabel!
-    @IBOutlet weak var remainingPeriodLabelImage: UIImageView!
-    @IBOutlet weak var TaypeLabelCell: UILabel!
+//    @IBOutlet weak var remainingPeriodLabel: UILabel!
+//    @IBOutlet weak var remainingPeriodLabelImage: UIImageView!
+//    @IBOutlet weak var TaypeLabelCell: UILabel!
     
     @IBOutlet weak var expireDaysLabel: UILabel!
     
     
-    
-    @IBOutlet weak var startDatelabel: UILabel!
-    
-    {
-    didSet {
-        startDatelabel.text = "StartDate".localized
-    }
-}
-
-    @IBOutlet weak var endDatelabel: UILabel!
-    {
-    didSet {
-        endDatelabel.text = "EndDate".localized
-    }
-}
+//
+//    @IBOutlet weak var startDatelabel: UILabel!
+//
+//    {
+//    didSet {
+//        startDatelabel.text = "StartDate".localized
+//    }
+//}
+//
+//    @IBOutlet weak var endDatelabel: UILabel!
+//    {
+//    didSet {
+//        endDatelabel.text = "EndDate".localized
+//    }
+//}
     @IBOutlet weak var expireLabel: UILabel!
     {
     didSet {
@@ -91,8 +91,19 @@ class CardCell: UITableViewCell {
 
     func configure(with card:Card) -> UITableViewCell {
         CardImageView.loadImageUsingCache(with: card.imageUrl)
-        nuStartDateLabel.text = card.startDate
-        nuEndDateLabel.text = card.ExpiryDate
+        let formatter = DateFormatter()
+                formatter.locale = Locale.current
+                formatter.calendar = .current
+                formatter.dateStyle = DateFormatter.Style.medium
+                formatter.timeStyle = DateFormatter.Style.none
+         let dateStart = card.startDate.convertToDate()
+           let startDate = formatter.string(from: dateStart)
+        let dateEnd = card.ExpiryDate.convertToDate()
+          let endDate = formatter.string(from: dateEnd)
+//            nuStartDateLabel.text = startDate
+//            nuEndDateLabel.text = endDate
+        
+      
         taypeLabel.text = card.type
         let expireDate = card.ExpiryDate.convertToDate()
         let differenceFromToday = getDifferenceInDays(date: expireDate)
