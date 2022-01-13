@@ -43,6 +43,7 @@ class SignInViewController: UIViewController {
     }
 }
     
+    
     @IBOutlet weak var signInLabel: UIButton!
     
     {
@@ -52,9 +53,14 @@ class SignInViewController: UIViewController {
     }
     
     
+   
+    @IBOutlet weak var eyePassword: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        PasswordTextField.rightView = eyePassword
+        PasswordTextField.rightViewMode = .whileEditing
         
         let backButton = UIBarButtonItem()
          backButton.title = ""
@@ -65,6 +71,21 @@ class SignInViewController: UIViewController {
                         tap.cancelsTouchesInView = false
                         view.addGestureRecognizer(tap)
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+        
+    }
+    
+   
+    @IBAction func eyePas(_ sender: UIButton) {
+        PasswordTextField.isSecureTextEntry.toggle()
+        if PasswordTextField.isSecureTextEntry {
+            if let image = UIImage(systemName: "eye.fill") {
+                sender.setImage(image, for: .normal)
+            }
+        } else {
+            if let image = UIImage(systemName: "eye.slash.fill"){
+                sender.setImage(image, for: .normal)
+            }
+        }
     }
     
     @IBAction func handleSignIn(_ sender: Any) {

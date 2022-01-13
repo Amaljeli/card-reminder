@@ -366,25 +366,18 @@
                                                                     </stackView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="caL-TE-Kad">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caL-TE-Kad">
                                                                 <rect key="frame" x="0.0" y="359.5" width="247.5" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="pYV-EA-tdx"/>
                                                                 </constraints>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                <state key="normal" title="Button">
-                                                                    <attributedString key="attributedTitle">
-                                                                        <fragment content="Sign Up">
-                                                                            <attributes>
-                                                                                <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                    </attributedString>
-                                                                </state>
-                                                                <buttonConfiguration key="configuration" style="gray" title="SignUp" cornerStyle="capsule">
+                                                                <state key="normal" title=""/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Sign Up" cornerStyle="capsule">
                                                                     <backgroundConfiguration key="background">
-                                                                        <color key="strokeColor" red="0.1411764771" green="0.19607841970000001" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <color key="strokeColor" systemColor="linkColor"/>
                                                                     </backgroundConfiguration>
+                                                                    <fontDescription key="titleFontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="12"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="handleSignUp:" destination="UEK-sK-hZG" eventType="touchUpInside" id="qMe-sr-HWi"/>
@@ -445,7 +438,6 @@
                     <connections>
                         <outlet property="EmailLabel" destination="fsZ-aI-3Uu" id="Ao5-H9-NIq"/>
                         <outlet property="PasswordLabel" destination="VMb-Vm-lEJ" id="6yl-91-6de"/>
-                        <outlet property="SignUpButton" destination="caL-TE-Kad" id="xWL-f9-8y0"/>
                         <outlet property="confirmPasswordLabel" destination="bV1-bG-qIm" id="rt9-TW-W1x"/>
                         <outlet property="confirmTextField" destination="L8C-5o-msP" id="Mo1-I7-gFO"/>
                         <outlet property="createAnAccount" destination="2QK-Wi-lZy" id="htL-nm-plW"/>
@@ -456,6 +448,7 @@
                         <outlet property="nameLabel" destination="jrS-IU-fcG" id="HlE-F9-BOv"/>
                         <outlet property="nameTextField" destination="z6y-V3-ifQ" id="aBV-aF-YCG"/>
                         <outlet property="passwordTextField" destination="I5D-WB-Ckw" id="BKT-eE-Yea"/>
+                        <outlet property="signUpBtn" destination="caL-TE-Kad" id="EHe-Fl-fOi"/>
                         <outlet property="userImageView" destination="sBX-ZR-yTi" id="zux-U8-bdb"/>
                     </connections>
                 </viewController>
@@ -480,7 +473,9 @@
                                 <rect key="frame" x="16" y="170.5" width="118" height="36"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="21"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Add new card"/>
+                                <state key="normal" title="Add new card">
+                                    <color key="titleColor" red="0.1411764771" green="0.19607841970000001" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="addNewCardAction:" destination="cwG-6h-nWF" eventType="touchUpInside" id="6LI-Wh-swM"/>
                                 </connections>
@@ -937,6 +932,19 @@
                                     <constraint firstAttribute="height" constant="25" id="mHZ-KZ-XhB"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyt-4e-F8D">
+                                <rect key="frame" x="333" y="337" width="17" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="" image="eye" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system" title="">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="eyePas:" destination="5zc-ak-gcD" eventType="touchUpInside" id="cn3-N1-cfq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q5d-Rz-cJZ"/>
                         <color key="backgroundColor" red="0.79070131320000003" green="0.87527140979999996" blue="0.9062298647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -975,6 +983,7 @@
                         <outlet property="EmailLabel" destination="wa5-X5-HI3" id="g1B-m0-byx"/>
                         <outlet property="EmailTaxtField" destination="iYC-7c-WIF" id="6IL-4v-RBk"/>
                         <outlet property="PasswordTextField" destination="AaH-yU-PMg" id="YEr-v4-gMp"/>
+                        <outlet property="eyePassword" destination="Lyt-4e-F8D" id="Cgb-on-OCR"/>
                         <outlet property="helloLabel" destination="vu3-V6-rye" id="Flj-Qb-eqi"/>
                         <outlet property="passwordLabel" destination="8cj-2n-ycj" id="gxC-GZ-RRR"/>
                         <outlet property="signInLabel" destination="A2d-Sk-lvs" id="c6w-bR-7TO"/>
@@ -992,7 +1001,7 @@
         <image name="Screen Shot 1443-06-01 at 1.36.11 PM" width="80" height="72"/>
         <image name="Screen Shot 1443-06-01 at 1.36.42 PM" width="68" height="78"/>
         <image name="Screen Shot 1443-06-01 at 1.36.50 PM" width="136" height="108"/>
-        <image name="Screen Shot 1443-06-01 at 1.37.04 PM" width="80" height="60"/>
+        <image name="Screen Shot 1443-06-01 at 1.37.04 PM" width="220" height="188"/>
         <image name="Screen Shot 1443-06-01 at 4.41.16 PM" width="88" height="62"/>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="back-arrow" width="512" height="512"/>

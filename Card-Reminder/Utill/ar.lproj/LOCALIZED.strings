@@ -1,6 +1,7 @@
 
 "SignIn" = "تسجيل الدخول";
 "SignUp" = "انشاء حساب";
+"Sign Up" = "انشاء حساب";
 "LetsGetStarted!" = "هيا بنا نبدأ";
 "CreateAnAccount!" = "إنشاء حساب";
 "Name" = "الأسم";
@@ -42,4 +43,4 @@
 "Al Blad Bank" = "بنك البلاد";
 "Al Arabi Bank" = "بنك العربي";
 "samba Bank" = "بنك سامبا";
-"renwal" = "تجديد";
+"Renwal" = "تجديد";

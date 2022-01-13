@@ -49,9 +49,12 @@ class SignUpViewController: UIViewController {
         confirmPasswordLabel.text = "confirm password".localized
     }
 }
-    @IBOutlet weak var SignUpButton: UIButton!{
+   
+    
+    @IBOutlet weak var signUpBtn: UIButton!{
         didSet{
-            SignUpButton.setTitle("SignUp".localized, for: .normal)
+            signUpBtn.setTitle(NSLocalizedString("Sign Up".localized, tableName: "LOCALIZED", comment: ""), for:.normal)
+   
         }
     }
     
