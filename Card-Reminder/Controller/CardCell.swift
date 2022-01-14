@@ -15,6 +15,10 @@ class CardCell: UITableViewCell {
     @IBOutlet weak var nuEndDateLabel: UILabel!
     @IBOutlet weak var taypeLabel: UILabel!
     
+    
+    @IBOutlet weak var viewCell: UIView!
+    
+    
     @IBAction func renewCard(_ sender: Any) {
         
         switch taypeLabel.text{
@@ -79,6 +83,22 @@ class CardCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        CardImageView.layer.shadowColor = UIColor.gray.cgColor
+            CardImageView.layer.shadowOpacity = 1
+        CardImageView.layer.shadowOffset = .zero
+        CardImageView.layer.cornerRadius = 10
+        CardImageView.layer.shadowPath = UIBezierPath(rect: CardImageView.bounds).cgPath
+        CardImageView.layer.shouldRasterize = true
+            self.CardImageView.layer.cornerRadius = 10
+            
+        viewCell.layer.shadowColor = UIColor.gray.cgColor
+//        viewCell.layer.shadowOpacity = 1
+        viewCell.layer.shadowOffset = .zero
+        viewCell.layer.cornerRadius = 10
+        viewCell.layer.shadowPath = UIBezierPath(rect: viewCell.bounds).cgPath
+        viewCell.layer.shouldRasterize = true
+            self.viewCell.layer.cornerRadius = 10
+            
         
     }
     

@@ -77,8 +77,14 @@ class ViewController: UIViewController {
 
   
     @IBAction func lnguageSegmentControlAction(_ sender: UISegmentedControl) {
+  
+                      
         if let lang = sender.titleForSegment(at:sender.selectedSegmentIndex)?.lowercased() {
-                         
+            if lang == "ar" {
+                         UIView.appearance().semanticContentAttribute = .forceRightToLeft
+                     }else {
+                         UIView.appearance().semanticContentAttribute = .forceLeftToRight
+                     }
                  
                          UserDefaults.standard.set(lang, forKey: "currentLanguage")
                          Bundle.setLanguage(lang)

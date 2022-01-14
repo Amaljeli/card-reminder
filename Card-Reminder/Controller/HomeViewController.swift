@@ -237,6 +237,7 @@ extension HomeViewController: UITableViewDataSource {
                 }
             }
         }
+        
     }
         
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -248,6 +249,7 @@ extension HomeViewController: UITableViewDataSource {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
+        action.backgroundColor = .systemBlue
         return UISwipeActionsConfiguration(actions: [action])
     }
 
@@ -256,7 +258,7 @@ extension HomeViewController: UITableViewDataSource {
 }
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 280
+        return 187
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! CardCell

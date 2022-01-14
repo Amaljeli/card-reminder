@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -12,37 +12,41 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="KGk-i7-Jjw" customClass="CardCell" customModule="Card_Reminder" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="KGk-i7-Jjw" customClass="CardCell" customModule="Card_Reminder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="187"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="187"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="sLU-QX-Qxg">
-                        <rect key="frame" x="25" y="37.5" width="270" height="265"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SO2-Zn-E3w">
+                        <rect key="frame" x="10" y="5" width="300" height="177"/>
+                        <color key="backgroundColor" name="Color-6"/>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sLU-QX-Qxg">
+                        <rect key="frame" x="21" y="21" width="278" height="145"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="E0N-m6-xyE">
-                                <rect key="frame" x="0.0" y="0.0" width="270" height="208"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E0N-m6-xyE">
+                                <rect key="frame" x="0.0" y="0.0" width="278" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 1443-06-01 at 1.36.50 PM" translatesAutoresizingMaskIntoConstraints="NO" id="KSS-J4-B8j">
-                                        <rect key="frame" x="35" y="0.0" width="200" height="130"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="q5C-fW-fZp"/>
-                                            <constraint firstAttribute="height" constant="130" id="x75-k9-jNX"/>
+                                            <constraint firstAttribute="width" constant="160" id="q5C-fW-fZp"/>
+                                            <constraint firstAttribute="height" constant="100" id="x75-k9-jNX"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wjG-SC-guu">
-                                        <rect key="frame" x="98.5" y="158" width="73.5" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wjG-SC-guu">
+                                        <rect key="frame" x="170" y="24" width="108" height="52"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Bank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eym-K7-bf0">
-                                                <rect key="frame" x="0.0" y="0.0" width="73.5" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdfghjklpoikhjhjhjhj" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eym-K7-bf0">
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="21"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdv-pg-HLG">
-                                                <rect key="frame" x="0.0" y="29" width="73.5" height="21"/>
+                                                <rect key="frame" x="0.0" y="31" width="108" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Renwal" image="link" catalog="system">
@@ -57,7 +61,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Ngk-jE-6hs">
-                                <rect key="frame" x="0.0" y="235" width="270" height="30"/>
+                                <rect key="frame" x="0.0" y="115" width="278" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expire" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNu-9F-3YK">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
@@ -69,12 +73,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelfewfewfewfgewfgerwgregddd" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p1-1W-90v">
-                                        <rect key="frame" x="50" y="-8" width="220" height="38"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="220" id="5VX-SB-cEA"/>
-                                            <constraint firstAttribute="height" constant="44" id="EBw-ne-Yta"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelfewfewfewfgewfgerwgre" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p1-1W-90v">
+                                        <rect key="frame" x="50" y="0.0" width="228" height="30"/>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -84,27 +84,33 @@
                         </subviews>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" name="Color"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="SO2-Zn-E3w" secondAttribute="trailing" constant="10" id="2u0-lJ-x3H"/>
+                    <constraint firstItem="sLU-QX-Qxg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="BTJ-t6-G3z"/>
+                    <constraint firstItem="SO2-Zn-E3w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="P6r-2I-PBk"/>
+                    <constraint firstAttribute="bottom" secondItem="SO2-Zn-E3w" secondAttribute="bottom" constant="5" id="SGc-aF-lQo"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="sLU-QX-Qxg" secondAttribute="bottom" constant="10" id="YIh-74-2KV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="sLU-QX-Qxg" secondAttribute="trailing" constant="5" id="bVD-49-UJb"/>
+                    <constraint firstItem="SO2-Zn-E3w" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="cau-E3-d29"/>
+                    <constraint firstItem="sLU-QX-Qxg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="zHG-2g-F6x"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <constraints>
-                <constraint firstItem="sLU-QX-Qxg" firstAttribute="centerX" secondItem="njF-e1-oar" secondAttribute="centerX" id="EMn-jI-6oG"/>
-                <constraint firstItem="sLU-QX-Qxg" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="dxd-gQ-26l"/>
-            </constraints>
             <connections>
                 <outlet property="CardImageView" destination="KSS-J4-B8j" id="0qP-Re-Uf4"/>
                 <outlet property="expireDaysLabel" destination="0p1-1W-90v" id="9fn-PB-qXd"/>
                 <outlet property="expireLabel" destination="NNu-9F-3YK" id="PcE-Xf-TTy"/>
                 <outlet property="taypeLabel" destination="eym-K7-bf0" id="Mgz-G6-eTL"/>
+                <outlet property="viewCell" destination="SO2-Zn-E3w" id="g70-1u-wrm"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="79.6875"/>
+            <point key="canvasLocation" x="131.19999999999999" y="79.610194902548727"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Screen Shot 1443-06-01 at 1.36.50 PM" width="136" height="108"/>
         <image name="link" catalog="system" width="128" height="122"/>
-        <namedColor name="Color">
-            <color red="0.9570000171661377" green="0.94499999284744263" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="Color-6">
+            <color red="0.88843025128865982" green="0.88843025128865982" blue="0.88843025128865982" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

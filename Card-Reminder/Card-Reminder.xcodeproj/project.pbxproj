@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1E2FF43D277881BA00E3DA30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E2FF43C277881BA00E3DA30 /* GoogleService-Info.plist */; };
-		1E2FF4492779935D00E3DA30 /* LadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FF4482779935D00E3DA30 /* LadingViewController.swift */; };
 		1E2FF44B277993BB00E3DA30 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FF44A277993BB00E3DA30 /* SignUpViewController.swift */; };
 		1E2FF44D277993DB00E3DA30 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FF44C277993DA00E3DA30 /* SignInViewController.swift */; };
 		1E2FF44F277993F800E3DA30 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FF44E277993F800E3DA30 /* HomeViewController.swift */; };
@@ -39,7 +38,6 @@
 
 /* Begin PBXFileReference section */
 		1E2FF43C277881BA00E3DA30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		1E2FF4482779935D00E3DA30 /* LadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadingViewController.swift; sourceTree = "<group>"; };
 		1E2FF44A277993BB00E3DA30 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1E2FF44C277993DA00E3DA30 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1E2FF44E277993F800E3DA30 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +110,7 @@
 		1E2FF4472779613F00E3DA30 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1E2FF4482779935D00E3DA30 /* LadingViewController.swift */,
+				1E5299122774AF520078CA41 /* ViewController.swift */,
 				1E2FF44A277993BB00E3DA30 /* SignUpViewController.swift */,
 				1E2FF44C277993DA00E3DA30 /* SignInViewController.swift */,
 				1E2FF44E277993F800E3DA30 /* HomeViewController.swift */,
@@ -162,7 +160,6 @@
 			children = (
 				1E52990E2774AF520078CA41 /* AppDelegate.swift */,
 				1E5299102774AF520078CA41 /* SceneDelegate.swift */,
-				1E5299122774AF520078CA41 /* ViewController.swift */,
 				1E52991C2774AF560078CA41 /* Info.plist */,
 			);
 			path = "Card-Reminder";
@@ -265,7 +262,6 @@
 				1E2FF45B277999A200E3DA30 /* Activity.swift in Sources */,
 				1EEFD0C6277B270900C7BD35 /* CardCell.swift in Sources */,
 				1E2FF4512779943900E3DA30 /* User.swift in Sources */,
-				1E2FF4492779935D00E3DA30 /* LadingViewController.swift in Sources */,
 				1E3518592781DBAB003C863D /* BundleExtention.swift in Sources */,
 				1E2FF44F277993F800E3DA30 /* HomeViewController.swift in Sources */,
 				1E2FF455277994F300E3DA30 /* CardViewController.swift in Sources */,
