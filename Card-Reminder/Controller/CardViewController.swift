@@ -49,9 +49,10 @@ class CardViewController: UIViewController {
     
     @IBOutlet weak var TypePickerView: UIPickerView!
     let activityIndicator = UIActivityIndicatorView()
-    var arrayOfTaype = ["Id Card".localized,"Passpot".localized,"Driving license".localized,"Al Rajhi Bank".localized,"Al Ahli Bank".localized,"Al Enma Bank".localized,"Al Blad Bank".localized,"Al Arabi Bank".localized,"samba Bank".localized,"Other Card" .localized]
+    var arrayOfTaype = ["Id Card".localized,"Passpot".localized,"Driving license".localized,"Al Rajhi Bank".localized,"Al Ahli Bank".localized,"Al Enma Bank".localized,"Al Blad Bank".localized,"Al Arabi Bank".localized,"samba Bank".localized,"SCFHS".localized,
+                        "SCE".localized,"Other Card".localized]
     
-    var selectedType = "Id Card"
+    var selectedType = "Id Card".localized
     
     
     override func viewDidLoad() {
@@ -97,9 +98,7 @@ class CardViewController: UIViewController {
         startDateLabel.text = sender.date.convertDateToString()
     }
     
-    //        let dateFormatter = DateFormatter()
-    //                dateFormatter.dateFormat = "yyyy-MM-dd"
-    //        startDateLabel.text = "\(dateFormatter.string(from: sender.date) )"
+
     
     
     

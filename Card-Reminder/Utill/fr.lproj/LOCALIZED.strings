@@ -26,7 +26,8 @@
 "Expire" = "Expirer";
 //"StartDate" = "Date de début";
 "ExpiryDate" = "Date d'expiration";
-"Add" = "Ajouter";
+"Add Card" = "Ajouter une carte";
+"Update Card" = "mettre à jour la carte";
 //"StartDate" = "Date de fin";
 //"EndDate" = "Date de fin";
 "Al Rajhi Bank" =  "Banque Al Rajhi";
@@ -40,6 +41,10 @@
 "Id Card" = "Carte d'identité";
 "Other Card" = "Autre carte";
 "Renwal" = "Renouvellement";
-"year" = "سنه";
+"SCFHS"  = "SCFHS";
+"year" = "an";
 "month" = "mois";
+"SCE" = "SCE";
+"Edit" = "Modifier";
+"delete" = "supprimer";
 "day" = "journee";

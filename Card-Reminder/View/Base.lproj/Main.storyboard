@@ -178,7 +178,7 @@
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 1443-06-01 at 1.36.50 PM" translatesAutoresizingMaskIntoConstraints="NO" id="sBX-ZR-yTi">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 1443-06-01 at 1.36.50 PM" translatesAutoresizingMaskIntoConstraints="NO" id="sBX-ZR-yTi">
                                                                 <rect key="frame" x="30" y="64" width="100" height="100"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="100" id="Nrg-gF-bJc"/>
@@ -486,7 +486,7 @@
                                     <action selector="addNewCardAction:" destination="cwG-6h-nWF" eventType="touchUpInside" id="6LI-Wh-swM"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 1443-06-01 at 1.36.50 PM" translatesAutoresizingMaskIntoConstraints="NO" id="5fO-WL-bur">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 1443-06-01 at 1.36.50 PM" translatesAutoresizingMaskIntoConstraints="NO" id="5fO-WL-bur">
                                 <rect key="frame" x="152.5" y="30" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="ieI-yS-RMr"/>

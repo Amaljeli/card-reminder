@@ -43,6 +43,12 @@ class CardCell: UITableViewCell {
         case "samba Bank".localized:
             UIApplication.shared.open(URL(string: "https://www.samba.com/ar/personal-banking/index.aspx")! as URL, options: [:], completionHandler: nil )
             
+        case "SCFHS".localized:
+            UIApplication.shared.open(URL(string: "https://www.scfhs.org.sa/Pages/default.aspx")! as URL, options: [:], completionHandler: nil )
+            
+        case "SCE".localized:
+            UIApplication.shared.open(URL(string: "https://www.saudieng.sa/English/Pages/default.aspx")! as URL, options: [:], completionHandler: nil )
+            
         default:
             print("error")
         }
@@ -90,7 +96,7 @@ class CardCell: UITableViewCell {
     @IBOutlet weak var yearLabel: UILabel!
     {
     didSet {
-        yearLabel.text = "year" .localized
+//        yearLabel.text = "year" .localized
     }
 }
     
@@ -139,7 +145,7 @@ class CardCell: UITableViewCell {
 //            nuEndDateLabel.text = endDate
         
       
-        taypeLabel.text = card.type
+        taypeLabel.text = card.type.localized
         let expireDate = card.ExpiryDate.convertToDate()
         let differenceFromToday = getDifferenceInDays(date: expireDate)
         expireDaysLabel.text = differenceFromToday
@@ -160,14 +166,14 @@ class CardCell: UITableViewCell {
         let difference = Calendar.current.dateComponents(component, from: currentDate, to: date)
         var differenceString = ""
         if difference.year != 0 {
-            differenceString += " year: \(difference.year ?? 0)"        }
+            differenceString += "year".localized + ": \(difference.year ?? 0)"        }
         
         if difference.month != 0 {
-            differenceString += " month: \(difference.month ?? 0)"
+            differenceString += "month".localized + ": \(difference.month ?? 0)"
         }
         
         if difference.day != 0 {
-            differenceString += " day: \(difference.day ?? 0)"
+            differenceString += "day".localized + ": \(difference.day ?? 0)"
         }
         
         return differenceString

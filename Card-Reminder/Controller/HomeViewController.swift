@@ -98,6 +98,12 @@ getCards()
                     let card =  Card(id: cardId, imageUrl: imageUrl, startDate: startDate, ExpiryDate: expiryDate, type: type
                                      , userId: userId)
                     self.cards.append(card)
+                    
+                    
+                    
+//                    self.cardTableView.reloadData()
+                    
+                    
                 }
                 
 
@@ -165,26 +171,26 @@ extension HomeViewController: UITableViewDataSource {
         
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            print("delete")
-            
-            
-            guard let userId = Auth.auth().currentUser?.uid else { return }
-            let ref = Firestore.firestore()
-            let cardId = cards[indexPath.row].id
-            ref.collection("card").document(userId).collection("card").document(cardId).delete { error in
-                if let error = error {
-                    print("error in delete \(error.localizedDescription)")
-                }
-            }
-        }
-        
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            print("delete")
+//
+//
+//            guard let userId = Auth.auth().currentUser?.uid else { return }
+//            let ref = Firestore.firestore()
+//            let cardId = cards[indexPath.row].id
+//            ref.collection("card").document(userId).collection("card").document(cardId).delete { error in
+//                if let error = error {
+//                    print("error in delete \(error.localizedDescription)")
+//                }
+//            }
+//        }
+//        editButtonItem.title = "delete".localized
+//    }
         
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let cell = tableView.cellForRow(at: indexPath) as! CardCell
-        let action = UIContextualAction(style: .normal, title: "Edit") { _, _, _ in
+        let action = UIContextualAction(style: .normal, title: "Edit".localized) { _, _, _ in
             if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CardViewController") as? CardViewController {
                 vc.selectedCard = self.cards[indexPath.row]
                 vc.selectedCradImage = cell.CardImageView.image
@@ -194,9 +200,22 @@ extension HomeViewController: UITableViewDataSource {
         action.backgroundColor = .systemBlue
         return UISwipeActionsConfiguration(actions: [action])
     }
-
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: "delete".localized) { (action, view, complectionHandler) in
+            guard let userId = Auth.auth().currentUser?.uid else { return }
+            let ref = Firestore.firestore()
+            let cardId = self.cards[indexPath.row].id
+            ref.collection("card").document(userId).collection("card").document(cardId).delete { error in
+                if let error = error {
+                    print("error in delete \(error.localizedDescription)")
+                }
+            }
+        }
+        action.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [action])
+    }
     
-    
+   
 }
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
