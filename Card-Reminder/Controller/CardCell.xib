@@ -100,8 +100,10 @@
                 <outlet property="CardImageView" destination="KSS-J4-B8j" id="0qP-Re-Uf4"/>
                 <outlet property="expireDaysLabel" destination="0p1-1W-90v" id="9fn-PB-qXd"/>
                 <outlet property="expireLabel" destination="NNu-9F-3YK" id="PcE-Xf-TTy"/>
+                <outlet property="renwalBu" destination="Mdv-pg-HLG" id="VDi-j5-9oz"/>
                 <outlet property="taypeLabel" destination="eym-K7-bf0" id="Mgz-G6-eTL"/>
                 <outlet property="viewCell" destination="SO2-Zn-E3w" id="g70-1u-wrm"/>
+                <outlet property="yearLabel" destination="0p1-1W-90v" id="jzN-bm-ppQ"/>
             </connections>
             <point key="canvasLocation" x="131.19999999999999" y="79.610194902548727"/>
         </tableViewCell>
@@ -110,7 +112,7 @@
         <image name="Screen Shot 1443-06-01 at 1.36.50 PM" width="136" height="108"/>
         <image name="link" catalog="system" width="128" height="122"/>
         <namedColor name="Color-6">
-            <color red="0.88843025128865982" green="0.88843025128865982" blue="0.88843025128865982" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.8880000114440918" green="0.8880000114440918" blue="0.8880000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

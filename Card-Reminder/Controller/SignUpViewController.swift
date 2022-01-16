@@ -95,9 +95,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBOutlet weak var confirmTextField: UITextField!{
-//        didSet{
-//            confirmTextField.isSecureTextEntry = true
-//        }
+//        
         didSet {
             confirmTextField.placeholder = "Confirm password".localized
         }

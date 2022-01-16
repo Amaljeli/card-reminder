@@ -45,6 +45,8 @@
 "Id Card" = "Id Card";
 "Other Card" = "Other Card";
 "year" = "year";
+"month" = "month";
+"day" = "day";
 "Please Enter your name" = "Please Enter your name";
 "Please Enter your Email" = "Please Enter your Email";
 "Please Enter your password" = "Please Enter your password";
@@ -56,3 +58,4 @@
 "Al Arabi Bank" = "Al Arabi Bank";
 "samba Bank" = "samba Bank";
 "Renwal" = "Renwal";
+

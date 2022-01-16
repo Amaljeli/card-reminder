@@ -12,11 +12,7 @@ class CardViewController: UIViewController {
     var selectedCradImage:UIImage?
     //    var selecedUser:UIImage?
     @IBOutlet weak var actionButton: UIButton!
-    //    {
-    //        didSet{
-    //            actionButton.setTitle("Add Card".localized, for: .normal)
-    //        }
-    //    }
+
     
     @IBOutlet weak var cardImageView: UIImageView!{
         didSet {
@@ -40,17 +36,7 @@ class CardViewController: UIViewController {
         }
     }
     
-    //    @IBOutlet weak var addLabel: UIButton!
-    //
-    //    {
-    //        didSet{
-    //            addLabel.setTitle("Add Card".localized, for: .normal)
-    //        }
-    //    }
     
-    
-    
-    //    var type = ""
     @IBOutlet weak var endPicker: UIDatePicker!
     
     
@@ -70,44 +56,33 @@ class CardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cardImageView.layer.shadowColor = UIColor.gray.cgColor
+//        cardImageView.layer.shadowOpacity = 1
+//        cardImageView.layer.shadowOffset = .zero
+//        cardImageView.layer.cornerRadius = 10
+//        cardImageView.layer.shadowPath = UIBezierPath(rect: cardImageView.bounds).cgPath
+//        cardImageView.layer.shouldRasterize = true
+//            self.cardImageView.layer.cornerRadius = 10
+//
         let backButton = UIBarButtonItem()
         backButton.title = ""
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-        //        print(type,"?????")
-        //        __________________________________________________
-        //        crateDatePicker()
-        //        func crateDatePicker () {
-        //            let toolbar = UIToolbar()
-        //            toolbar.sizeToFit()
-        //
-        ////            let doneBtn = UIBarButtonItem(barButtonSystemItem: .done , target: nil, action: #selector(donePressed))
-        //            let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-        //            toolbar.setItems([doneBtn], animated: true)
-        //            startDateTextField.inputAccessoryView = toolbar
-        //
-        //            startDateTextField.inputView = datePicker
-        //
-        //        }
-        //
-        //        @objc func donePressed () {
-        //
-        //                }
         
-        //        _____________________________________
-        
+      
         TypePickerView.delegate = self
         TypePickerView.dataSource = self
         
         if let selectedCard = selectedCard,
            let selectedImage = selectedCradImage {
-//                        startPiecker.date =  startPiecker
+
             startDateLabel.text = selectedCard.startDate
             endDateLabel.text = selectedCard.ExpiryDate
             cardImageView.image = selectedImage
             actionButton.setTitle("Update Card".localized, for: .normal)
-            //            let deleteBarButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(handleDelete))
-            //            self.navigationItem.rightBarButtonItem = deleteBarButton
+        
+            
+            
         }else {
             actionButton.setTitle("Add Card".localized, for: .normal)
             //            self.navigationItem.rightBarButtonItem = nil
@@ -136,42 +111,6 @@ class CardViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    //        let dateFormatter = DateFormatter()
-    //                dateFormatter.dateFormat = "yyyy-MM-dd"
-    
-    
-    //        endDateLabel.text = "\(dateFormatter.string(from: sender.date) )"
-    
-    
-    
-    
-    
-    
-    
-    //    @objc func handleDelete (_ sender: UIBarButtonItem) {
-    //        let ref = Firestore.firestore().collection("cards")
-    //        if let selectedCard = selectedCard {
-    //            Activity.showIndicator(parentView: self.view, childView: activityIndicator)
-    //            ref.document(selectedCard.id).delete { error in
-    //                if let error = error {
-    //                    print("Error in db delete",error)
-    //                }else {
-    //                    let storageRef = Storage.storage().reference(withPath: "cards/\(selectedCard.userId)/\(selectedCard.id)")
-    //
-    //                    storageRef.delete { error in
-    //                        if let error = error {
-    //                            print("Error in storage delete",error)
-    //                        } else {
-    //                            self.activityIndicator.stopAnimating()
-    //                            self.navigationController?.popViewController(animated: true)
-    //                        }
-    //                    }
-    //
-    //                }
-    //            }
-    //        }
-    //
-    //}
     @IBAction func handleActionTouch(_ sender: Any) {
         //
         if let image = cardImageView.image,

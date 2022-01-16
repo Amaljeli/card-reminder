@@ -100,57 +100,7 @@ getCards()
                     self.cards.append(card)
                 }
                 
-//        let ref = Firestore.firestore()
-//        ref.collection("card").addSnapshotListener {
-//            snapshot, error in
-//            if let error = error {
-//                print ("DB ERROR Cards",error.localizedDescription)
-//            }
-//            if let snapshot = snapshot {
-//                print("CARD GANGES:",snapshot.documents.count)
-//
-//                snapshot.documents.forEach { docement in
-//                    let  userId = docement.get("userId") as? String ?? ""
-//                    let imageUrl = docement.get("imageUrl") as? String ?? ""
-//                  print(userId)
-//                    let card =  Card(id: "", imageUrl: imageUrl, startDate: "12-02-2019", ExpiryDate: "12-02-2022", type: "Card Bank", userId: userId)
-//                    self.cards.append(card)
-//                    self.cardTableView.reloadData()
-//
-//                }
-//                let dateCreatedAt = Date(timeIntervalSince1970: 1640544212)
-//                print("difference \(self.getDifferenceInDays(date: dateCreatedAt))")
 
-//                snapshot.documents.forEach { documen
-//                    if let  userId = cardData["userId"] as? String {
-//                        ref.collection("users").document(userId).getDocument { userSnapshot, error in
-//                            if let error = error {
-//                                print ("Error user Data",error.localizedDescription)
-//                            }
-////                            if let userSnapshot = userSnapshot,
-////                               let userData = userSnapshot.data (){
-////                                let user = User(dict: userData)
-//////
-////                                let card = Card(dict:cardData,id:diff.document.documentID,user:user)
-//                                self.cardTableView.beginUpdates()
-////                                if snapshot.documentChanges.count != 1 {
-////                                    self.cards.append(card)
-////
-////                                    self.cardTableView.insertRows(at: [IndexPath(row:self.cards.count - 1,section: 0)],with: .automatic)
-////                                }else {
-////                                    self.cards.insert(card,at:0)
-////
-////                                    self.cardTableView.insertRows(at: [IndexPath(row: 0,section: 0)],with: .automatic)
-////                                }
-////
-//                                self.cardTableView.endUpdates()
-////
-////                                }
-////
-//                            }
-//                        }
-//
-//                }
             }
             }
         

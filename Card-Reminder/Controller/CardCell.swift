@@ -80,6 +80,21 @@ class CardCell: UITableViewCell {
 }
     
     
+    @IBOutlet weak var renwalBu: UIButton!{
+        didSet{
+            renwalBu.setTitle(NSLocalizedString("Renwal".localized, tableName: "LOCALIZED", comment: ""), for:.normal)
+   
+        }
+    }
+    
+    @IBOutlet weak var yearLabel: UILabel!
+    {
+    didSet {
+        yearLabel.text = "year" .localized
+    }
+}
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

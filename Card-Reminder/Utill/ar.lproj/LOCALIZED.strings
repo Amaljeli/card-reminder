@@ -33,6 +33,9 @@
 "Id Card" = "الهوية الوطنية";
 "Other Card" = "بطاقة اخرى";
 "year" = "سنه";
+"month" = "شهر";
+"day" = "يوم";
+
 "Please Enter your name" = "من فضلك ادخل اسمك";
 "Please Enter your Email" = "من فضلك ادخل البريد الالكتروني";
 "Please Enter your password" = "من فضلك ادخل الرمز السري";
@@ -44,3 +47,4 @@
 "Al Arabi Bank" = "بنك العربي";
 "samba Bank" = "بنك سامبا";
 "Renwal" = "تجديد";
+
